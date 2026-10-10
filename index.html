@@ -1,0 +1,360 @@
+<!doctype html><html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>EIDO — Private Estate &amp; Hotel · Minho, Portugal</title>
+<meta name="description" content="Twenty private residences and a fifteen-suite hotel on eight hectares of chestnut and oak wood in the Minho, Portugal.">
+<meta name="robots" content="noindex, nofollow">
+<meta name="theme-color" content="#1E2B23">
+<meta property="og:title" content="EIDO — Private Estate &amp; Hotel"><meta property="og:image" content="img/hero-1800.webp">
+<link rel="icon" href="img/simbolo.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=Jost:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="preload" as="image" href="img/hero-900.webp" imagesrcset="img/hero-900.webp 900w, img/hero-1800.webp 1800w" imagesizes="100vw">
+<style>
+:root{--moss:#1E2B23;--linen:#F6F2EA;--sand:#EAE2D3;--bronze:#A07A4C;--stone:#8E8B82;--ink:#1E2B23;
+--serif:"Cormorant Garamond",Georgia,serif;--sans:"Jost",system-ui,sans-serif;--ease:cubic-bezier(.16,1,.3,1);--pad:clamp(20px,5vw,72px)}
+*{box-sizing:border-box;margin:0;padding:0}html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{background:var(--linen);color:var(--ink);font-family:var(--sans);font-weight:300;line-height:1.6;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+img{display:block;width:100%;height:100%;object-fit:cover}
+a{color:inherit;text-decoration:none}
+.lbl{font-family:var(--sans);font-weight:400;font-size:11px;letter-spacing:.28em;text-transform:uppercase}
+.lbl.b{color:var(--bronze)}
+.cf{display:grid;grid-template-columns:1fr 1fr;gap:22px 28px;max-width:860px;margin-top:48px}.cf label{display:flex;flex-direction:column;gap:8px}.cf label.wide{grid-column:1/-1}
+.cf input,.cf select,.cf textarea{background:transparent;border:0;border-bottom:1px solid rgba(234,226,211,.35);color:var(--linen);font:300 17px var(--sans);padding:8px 0;border-radius:0;-webkit-appearance:none}
+.cf select option{color:#1E2B23}.cf input:focus,.cf select:focus,.cf textarea:focus{outline:none;border-color:var(--bronze)}
+.cf .send{grid-column:1/-1;justify-self:start;background:var(--bronze);color:var(--linen);border:0;border-radius:999px;padding:16px 30px;font:400 12px var(--sans);letter-spacing:.24em;text-transform:uppercase;cursor:pointer;transition:background .3s}.cf .send:hover{background:#b48a58}
+.cf .ok{grid-column:1/-1;color:var(--sand);font-family:var(--serif);font-style:italic;font-size:22px}
+@media (max-width:700px){.cf{grid-template-columns:1fr}}
+h1,h2,h3{font-family:var(--serif);font-weight:300;letter-spacing:-.01em;line-height:1.02}
+h2{font-size:clamp(40px,8.5vw,104px)}
+h2 em,h1 em{font-style:italic;color:var(--bronze)}
+p{font-size:clamp(16px,1.15vw,18px);max-width:34em}
+section{position:relative}
+
+/* header */
+.hd{position:fixed;inset:0 0 auto;z-index:50;display:flex;align-items:center;justify-content:space-between;padding:calc(env(safe-area-inset-top) + 16px) var(--pad) 16px;color:var(--linen);transition:transform .6s var(--ease),background .4s,color .4s}
+.hd.solid{background:rgba(246,242,234,.92);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);color:var(--moss)}
+.hd.hide{transform:translateY(-110%)}
+.hd .mark{display:flex;align-items:center;gap:12px;font-family:var(--serif);font-size:24px;letter-spacing:.32em}
+.hd .mark svg{width:22px;height:22px}
+.hd nav{display:flex;gap:28px}
+.hd nav a{opacity:.85}
+.burger{display:none;background:none;border:0;color:inherit;width:44px;height:44px;position:relative}
+.burger i{position:absolute;left:10px;right:10px;height:1px;background:currentColor;transition:.4s var(--ease)}
+.burger i:first-child{top:18px}.burger i:last-child{top:26px}
+.menu{position:fixed;inset:0;z-index:49;background:var(--moss);color:var(--linen);display:flex;flex-direction:column;justify-content:center;padding:var(--pad);gap:6px;clip-path:inset(0 0 100% 0);transition:clip-path .8s var(--ease)}
+.menu.open{clip-path:inset(0 0 0 0)}
+.menu a{font-family:var(--serif);font-size:44px;line-height:1.25}
+.menu .lbl{margin-top:40px;color:var(--stone)}
+body.mopen .burger i:first-child{top:22px;transform:rotate(45deg)}body.mopen .burger i:last-child{top:22px;transform:rotate(-45deg)}
+body.mopen .hd{color:var(--linen);background:transparent}
+
+/* hero */
+.hero{height:100svh;min-height:560px;overflow:hidden;color:var(--linen);background:var(--moss)}
+.hero .bg{position:absolute;inset:0;transform:scale(1.12);animation:kb 18s var(--ease) forwards}
+@keyframes kb{to{transform:scale(1)}}
+.hero .veil{position:absolute;inset:0;background:linear-gradient(180deg,rgba(20,28,23,.35) 0%,rgba(20,28,23,0) 30%,rgba(20,28,23,.15) 55%,rgba(20,28,23,.75) 100%)}
+.hero .in{position:absolute;left:var(--pad);right:var(--pad);bottom:calc(env(safe-area-inset-bottom) + 6vh);display:grid;gap:22px}
+.hero h1{font-size:clamp(54px,12.5vw,168px);line-height:.92}
+.hero h1 .ln{display:block;overflow:hidden}.hero h1 .ln span{display:block;transform:translateY(105%);animation:up 1.4s var(--ease) forwards}
+.hero h1 .ln:nth-child(2) span{animation-delay:.12s}.hero h1 .ln:nth-child(3) span{animation-delay:.24s;font-style:italic;color:var(--sand)}
+@keyframes up{to{transform:none}}
+.hero .meta{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;opacity:0;animation:fade 1.2s .9s forwards}
+@keyframes fade{to{opacity:1}}
+.scroll{display:flex;align-items:center;gap:12px}.scroll i{width:1px;height:44px;background:rgba(246,242,234,.5);position:relative;overflow:hidden}
+.scroll i:after{content:"";position:absolute;left:0;top:-44px;width:1px;height:44px;background:var(--linen);animation:drip 2.2s infinite var(--ease)}
+@keyframes drip{to{top:44px}}
+
+/* statement */
+.stmt{padding:22vh var(--pad) 18vh;max-width:1400px}
+.stmt .lbl{margin-bottom:36px}
+.words{font-family:var(--serif);font-size:clamp(30px,5.4vw,72px);line-height:1.12;font-weight:300}
+.words .w{opacity:.14;transition:opacity .4s}.words .w.on{opacity:1}.words .acc{color:var(--bronze);font-style:italic}
+
+/* numbers */
+.nums{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid rgba(30,43,35,.15);margin:0 var(--pad)}
+.nums div{padding:34px 0 40px;border-right:1px solid rgba(30,43,35,.15);padding-left:22px}.nums div:last-child{border-right:0}
+.nums b{display:block;font-family:var(--serif);font-weight:300;font-size:clamp(52px,7vw,96px);line-height:1}
+.nums span{color:var(--stone)}
+
+/* full image w/ caption */
+.full{height:100svh;min-height:520px;overflow:hidden}
+.full .px{position:absolute;inset:-8% 0;will-change:transform}
+.full .cap{position:absolute;left:var(--pad);bottom:calc(env(safe-area-inset-bottom) + 28px);color:var(--linen);text-shadow:0 1px 18px rgba(0,0,0,.35)}
+.full .cap h2{font-size:clamp(40px,8vw,100px);margin-top:10px}
+
+/* split */
+.split{display:grid;grid-template-columns:1fr 1fr;min-height:100svh}
+.split .t{padding:20vh var(--pad);display:flex;flex-direction:column;justify-content:center;gap:28px}
+.split .i{position:relative;overflow:hidden;min-height:60vh}
+.split.rev .i{order:-1}
+
+/* gallery */
+.gal{padding:18vh 0 14vh}
+.gal .hdr{display:flex;justify-content:space-between;align-items:flex-end;padding:0 var(--pad) 48px;gap:24px}
+.track{display:flex;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;padding:0 var(--pad);scrollbar-width:none;-webkit-overflow-scrolling:touch}
+.track::-webkit-scrollbar{display:none}
+.slide{flex:0 0 min(60vw,980px);scroll-snap-align:center}
+.slide img{aspect-ratio:16/10;height:auto}
+.slide figcaption{display:flex;gap:16px;padding-top:14px;font-family:var(--serif);font-style:italic;font-size:19px}
+.slide figcaption span{font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:.2em;color:var(--stone);padding-top:6px}
+.prog{margin:28px var(--pad) 0;height:1px;background:rgba(30,43,35,.15);position:relative}.prog i{position:absolute;left:0;top:0;bottom:0;background:var(--moss);width:10%}
+
+/* interiors stack */
+.dark{background:var(--moss);color:var(--linen)}
+.dark .lbl{color:var(--stone)}
+.intro{padding:22vh var(--pad) 12vh;display:grid;gap:30px}
+.stack{display:grid;gap:4vh;padding:0 var(--pad) 18vh}
+.stack figure{position:relative;overflow:hidden}
+.stack figure img{aspect-ratio:16/10;height:auto;transform:scale(1.08);transition:transform 1.8s var(--ease)}
+.stack figure.in img{transform:scale(1)}
+.stack figcaption{display:flex;justify-content:space-between;gap:20px;padding-top:14px;font-family:var(--serif);font-style:italic;font-size:20px}
+.stack figcaption span{font-family:var(--sans);font-style:normal;font-size:11px;letter-spacing:.22em;color:var(--stone);padding-top:6px}
+.pair{display:grid;grid-template-columns:1fr 1fr;gap:4vh 16px}
+
+/* materials */
+.mat{padding:20vh var(--pad);display:grid;grid-template-columns:1fr 1.2fr;gap:8vw}
+.mat ul{list-style:none;border-top:1px solid rgba(30,43,35,.15)}
+.mat li{display:grid;grid-template-columns:130px 1fr;gap:20px;padding:18px 0;border-bottom:1px solid rgba(30,43,35,.15)}
+.mat li .lbl{color:var(--stone);padding-top:4px}
+
+/* plans */
+.plans{padding:18vh var(--pad);background:var(--sand)}
+.tabs{display:flex;gap:8px;overflow-x:auto;margin:40px calc(-1*var(--pad)) 24px;padding:0 var(--pad);scrollbar-width:none}
+.tabs::-webkit-scrollbar{display:none}
+.tab{flex:none;border:1px solid rgba(30,43,35,.25);background:none;border-radius:99px;padding:12px 20px;font:400 12px var(--sans);letter-spacing:.16em;text-transform:uppercase;color:var(--moss);cursor:pointer;transition:.3s}
+.tab.on{background:var(--moss);color:var(--linen);border-color:var(--moss)}
+.pane{display:none}.pane.on{display:block;animation:fade .6s}
+.pane img{height:auto;background:#fff;border:1px solid rgba(30,43,35,.1)}
+.pane figcaption{display:flex;justify-content:space-between;gap:16px;padding-top:14px;font-family:var(--serif);font-size:20px}
+.pane figcaption span{font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone);padding-top:6px}
+
+/* hotel amen */
+.amen{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;padding:0 var(--pad) 18vh}
+.amen figure img{aspect-ratio:4/5;height:auto}
+.amen figcaption{padding-top:12px;font-family:var(--serif);font-size:22px}
+.amen figcaption span{display:block;font-family:var(--sans);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--stone)}
+
+/* masterplan */
+.mp{padding:20vh var(--pad);display:grid;grid-template-columns:1.15fr 1fr;gap:6vw;align-items:center}
+.mp .im{background:#F4F1EA}.mp .im img{object-fit:contain;height:auto}
+.facts{list-style:none;border-top:1px solid rgba(30,43,35,.15);margin-top:10px}
+.facts li{display:flex;justify-content:space-between;gap:20px;padding:15px 0;border-bottom:1px solid rgba(30,43,35,.15)}
+.facts li span:first-child{color:var(--stone)}
+
+/* units */
+.units{padding:20vh var(--pad)}
+.units ol{list-style:none;margin-top:48px;border-top:1px solid rgba(246,242,234,.18)}
+.unit{display:grid;grid-template-columns:70px 1.2fr 1.4fr 1fr;align-items:baseline;gap:16px;padding:20px 0;border-bottom:1px solid rgba(246,242,234,.18)}
+.u-id{font-family:var(--serif);font-size:30px}.u-name{font-family:var(--serif);font-size:22px}
+.u-meta{color:var(--stone);font-size:14px}.u-price{text-align:right;font-size:17px;letter-spacing:.02em}.res{color:var(--bronze);font-size:12px;letter-spacing:.22em;text-transform:uppercase}
+.units .note{color:var(--stone);font-size:13px;margin-top:28px;max-width:60em}
+
+/* location */
+.loc{padding:20vh var(--pad);display:grid;grid-template-columns:1fr 1fr;gap:6vw}
+
+/* cta + footer */
+.cta{padding:24vh var(--pad) 14vh;text-align:left}
+.cta h2{font-size:clamp(48px,11vw,150px)}
+.pill{display:inline-flex;align-items:center;gap:14px;margin-top:44px;border:1px solid var(--sand);border-radius:99px;padding:18px 30px;color:var(--linen);font:400 12px var(--sans);letter-spacing:.22em;text-transform:uppercase;overflow:hidden;position:relative}
+.pill i{width:8px;height:8px;border-radius:50%;background:var(--bronze)}
+.ft{padding:48px var(--pad) calc(env(safe-area-inset-bottom) + 40px);display:grid;gap:28px;border-top:1px solid rgba(246,242,234,.15)}
+.ft img{width:150px;height:auto}
+.ft p{color:var(--stone);font-size:12px;max-width:none}
+
+/* reveal */
+.rv{opacity:0;transform:translateY(40px);transition:opacity 1.2s var(--ease),transform 1.2s var(--ease);transition-delay:var(--d,0s)}
+.rv.in{opacity:1;transform:none}
+
+@media (max-width:820px){
+ .hd nav{display:none}.burger{display:block}
+ .nums{grid-template-columns:1fr 1fr}.nums div:nth-child(2){border-right:0}.nums div:nth-child(-n+2){border-bottom:1px solid rgba(30,43,35,.15)}
+ .split{grid-template-columns:1fr;min-height:0}.split .t{padding:14vh var(--pad) 10vh}.split .i{min-height:70vh}.split.rev .i{order:0}
+ .slide{flex-basis:86vw}
+ .pair{grid-template-columns:1fr}
+ .mat{grid-template-columns:1fr;gap:48px;padding:16vh var(--pad)}.mat li{grid-template-columns:1fr;gap:4px}
+ .amen{grid-template-columns:1fr 1fr;gap:12px}.amen figure:last-child{grid-column:1/-1}.amen figure:last-child img{aspect-ratio:16/10}
+ .mp{grid-template-columns:1fr;padding:16vh var(--pad)}
+ .unit{grid-template-columns:52px 1fr auto;grid-template-areas:"id name price" "id meta meta";row-gap:2px}
+ .u-id{grid-area:id;font-size:24px}.u-name{grid-area:name;font-size:20px}.u-meta{grid-area:meta;font-size:13px}.u-price{grid-area:price;font-size:15px}
+ .loc{grid-template-columns:1fr;padding:16vh var(--pad)}
+ .gal .hdr{flex-direction:column;align-items:flex-start}
+ .hero .meta .lbl.r{display:none}
+}
+@media (prefers-reduced-motion:reduce){*,*:before,*:after{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.hero h1 .ln span{transform:none}.hero .meta{opacity:1}.words .w{opacity:1}}
+</style></head><body>
+
+<header class="hd" id="hd">
+ <a href="#top" class="mark" aria-label="EIDO"><svg viewBox="60 60 280 280" fill="none"><rect x="64" y="64" width="272" height="272" stroke="currentColor" stroke-width="14"/><rect x="60" y="138" width="168" height="14" fill="currentColor"/><rect x="60" y="194" width="123" height="14" fill="currentColor"/><rect x="60" y="250" width="168" height="14" fill="currentColor"/><circle cx="278" cy="200" r="24" fill="#A07A4C"/></svg>EIDO</a>
+ <nav class="lbl"><a href="#estate">Estate</a><a href="#residences">Residences</a><a href="#interiors">Interiors</a><a href="#hotel">Hotel</a><a href="#availability">Availability</a><a href="#contact">Contact</a></nav>
+ <button class="burger" aria-label="Menu" id="burger"><i></i><i></i></button>
+</header>
+<div class="menu" id="menu">
+ <a href="#estate">The Estate</a><a href="#residences">Residences</a><a href="#interiors">Interiors</a><a href="#plans">Floor plans</a><a href="#hotel">Hotel &amp; Spa</a><a href="#availability">Availability</a><a href="#contact">Contact</a>
+ <div class="lbl">Minho · Portugal</div>
+</div>
+
+<main id="top">
+<section class="hero">
+ <div class="bg"><img class="" src="img/hero-900.webp" srcset="img/hero-900.webp 900w, img/hero-1800.webp 1800w" sizes="100vw" alt="A residence at EIDO, golden hour" loading="eager" decoding="async"></div><div class="veil"></div>
+ <div class="in">
+  <div class="lbl">Private Estate &amp; Hotel</div>
+  <h1><span class="ln"><span>Home ground,</span></span><span class="ln"><span>above the</span></span><span class="ln"><span>valley.</span></span></h1>
+  <div class="meta"><div class="scroll lbl"><i></i>Scroll</div><div class="lbl r">Minho, Portugal · 41°34′ N</div></div>
+ </div>
+</section>
+
+<section class="stmt" id="estate">
+ <div class="lbl b rv">EIDO · from the Minho dialect</div>
+ <p class="words" data-words>In the north of Portugal the <span class="acc">eido</span> is the land around the family house — the yard, the granite walls, the old trees. Twenty private residences and a fifteen-suite hotel, each house alone in a clearing of <span class="acc">old chestnut trees.</span></p>
+</section>
+
+<div class="nums">
+ <div class="rv"><b data-count="8">0</b><span class="lbl">Hectares</span></div>
+ <div class="rv" style="--d:.1s"><b data-count="20">0</b><span class="lbl">Residences</span></div>
+ <div class="rv" style="--d:.2s"><b data-count="15">0</b><span class="lbl">Hotel suites</span></div>
+ <div class="rv" style="--d:.3s"><b data-count="3000" data-suffix=" m²">0</b><span class="lbl">Average plot</span></div>
+</div>
+
+<section class="full" style="margin-top:18vh"><div class="px" data-px><img class="" src="img/aerial-900.webp" srcset="img/aerial-900.webp 900w, img/aerial-1800.webp 1800w" sizes="100vw" alt="The estate from the air" loading="lazy" decoding="async"></div>
+ <div class="cap"><div class="lbl">The estate</div><h2>Eight hectares,<br><em>twenty clearings.</em></h2></div></section>
+
+<section class="mp">
+ <div class="im rv"><img src="img/masterplan.webp" alt="Masterplan" loading="lazy"></div>
+ <div class="rv" style="--d:.15s">
+  <div class="lbl b">Masterplan</div><h2 style="font-size:clamp(40px,6vw,80px);margin:18px 0 26px">Every house in its own clearing.</h2>
+  <p>A single gate on the road. An avenue of cypresses runs past the old lake to a roundabout, and from there a loop road and a central avenue reach every house under the trees. No house is closer than 26 m to its neighbour.</p>
+  <ul class="facts"><li><span>Private plots</span><span>20 · avg 3,060 m²</span></li><li><span>Residences</span><span>18 single-storey · 2 two-storey</span></li><li><span>Hotel &amp; spa</span><span>by the gate</span></li><li><span>Lake &amp; stream</span><span>kept, with the old granite dam</span></li></ul>
+ </div>
+</section>
+
+<section class="split"><div class="t"><div class="lbl b rv">Arrival</div><h2 class="rv">A gate,<br><em>then the trees.</em></h2><p class="rv">Granite pillars and a bronze gate on the road. Inside, the cypress avenue, the lake on the left behind the willows and the hotel on the right.</p></div>
+ <div class="i"><img class="" src="img/gate-900.webp" srcset="img/gate-900.webp 900w, img/gate-1800.webp 1800w" sizes="(max-width:820px) 100vw, 50vw" alt="The estate gate" loading="lazy" decoding="async"></div></section>
+
+<section class="gal" id="residences">
+ <div class="hdr"><div><div class="lbl b rv">The residences</div><h2 class="rv" style="margin-top:16px">Granite, bronze, <em>oak.</em></h2></div>
+ <p class="rv">Eighteen single-storey houses of 444 m² in an L, and two of 422 m² on two floors above the lake, on plots of about 3,000 m². Monolithic granite walls, a bronze-edged roof that reaches five metres past the glass, and 4.5 m glass that slides into the stone.</p></div>
+ <div class="track" id="track"><figure class="slide"><img class="" src="img/hero-900.webp" srcset="img/hero-900.webp 900w, img/hero-1800.webp 1800w" sizes="(max-width:700px) 86vw, 60vw" alt="The pool garden at golden hour" loading="lazy" decoding="async"><figcaption><span>01</span>The pool garden at golden hour</figcaption></figure><figure class="slide"><img class="" src="img/h_chegada-900.webp" srcset="img/h_chegada-900.webp 900w, img/h_chegada-1800.webp 1800w" sizes="(max-width:700px) 86vw, 60vw" alt="Arrival: a reflecting pool and an old olive tree" loading="lazy" decoding="async"><figcaption><span>02</span>Arrival: a reflecting pool and an old olive tree</figcaption></figure><figure class="slide"><img class="" src="img/h_jantar-900.webp" srcset="img/h_jantar-900.webp 900w, img/h_jantar-1800.webp 1800w" sizes="(max-width:700px) 86vw, 60vw" alt="Dinner for twelve under the oak soffit" loading="lazy" decoding="async"><figcaption><span>03</span>Dinner for twelve under the oak soffit</figcaption></figure><figure class="slide"><img class="" src="img/h_drone-900.webp" srcset="img/h_drone-900.webp 900w, img/h_drone-1800.webp 1800w" sizes="(max-width:700px) 86vw, 60vw" alt="The garden from above" loading="lazy" decoding="async"><figcaption><span>04</span>The garden from above</figcaption></figure><figure class="slide"><img class="" src="img/p_jardim-900.webp" srcset="img/p_jardim-900.webp 900w, img/p_jardim-1800.webp 1800w" sizes="(max-width:700px) 86vw, 60vw" alt="The two-storey residence" loading="lazy" decoding="async"><figcaption><span>05</span>The two-storey residence</figcaption></figure><figure class="slide"><img class="" src="img/p_lago-900.webp" srcset="img/p_lago-900.webp 900w, img/p_lago-1800.webp 1800w" sizes="(max-width:700px) 86vw, 60vw" alt="Above the lake" loading="lazy" decoding="async"><figcaption><span>06</span>Above the lake</figcaption></figure><figure class="slide"><img class="" src="img/riacho-900.webp" srcset="img/riacho-900.webp 900w, img/riacho-1800.webp 1800w" sizes="(max-width:700px) 86vw, 60vw" alt="The stream and its granite weir" loading="lazy" decoding="async"><figcaption><span>07</span>The stream and its granite weir</figcaption></figure><figure class="slide"><img class="" src="img/rua-900.webp" srcset="img/rua-900.webp 900w, img/rua-1800.webp 1800w" sizes="(max-width:700px) 86vw, 60vw" alt="Roads under the chestnut trees" loading="lazy" decoding="async"><figcaption><span>08</span>Roads under the chestnut trees</figcaption></figure><figure class="slide"><img class="" src="img/padel-900.webp" srcset="img/padel-900.webp 900w, img/padel-1800.webp 1800w" sizes="(max-width:700px) 86vw, 60vw" alt="A padel court in the wood" loading="lazy" decoding="async"><figcaption><span>09</span>A padel court in the wood</figcaption></figure></div>
+ <div class="prog"><i id="prog"></i></div>
+</section>
+
+<section class="split rev"><div class="i"><img class="" src="img/h_jantar-900.webp" srcset="img/h_jantar-900.webp 900w, img/h_jantar-1800.webp 1800w" sizes="(max-width:820px) 100vw, 50vw" alt="Outdoor dining" loading="lazy" decoding="async"></div>
+ <div class="t"><div class="lbl b rv">Outside</div><h2 class="rv">Life on <em>the terrace.</em></h2><p class="rv">Every house has a dining pavilion for twelve with a stone outdoor kitchen, a sunken lounge around a fire pit and a long black-stone infinity pool.</p></div></section>
+
+<section class="full"><div class="px" data-px><img class="" src="img/h_noite-900.webp" srcset="img/h_noite-900.webp 900w, img/h_noite-1800.webp 1800w" sizes="100vw" alt="The residence at night" loading="lazy" decoding="async"></div><div class="cap"><div class="lbl">Evening</div><h2>The house<br><em>at night.</em></h2></div></section>
+
+<section class="dark" id="interiors">
+ <div class="intro"><div class="lbl rv">Interiors</div><h2 class="rv">Granite, oak,<br><em>marble, light.</em></h2><p class="rv" style="color:var(--sand)">The living room and kitchen sit under a 4.8 m oak ceiling and open completely to the terrace. Calacatta marble, European walnut, smoked oak, bronze.</p></div>
+ <div class="stack">
+  <figure class="rv"><img class="" src="img/i_sala-900.webp" srcset="img/i_sala-900.webp 900w, img/i_sala-1800.webp 1800w" sizes="100vw" alt="Living room" loading="lazy" decoding="async"><figcaption>Living room<span>4.8 m ceiling</span></figcaption></figure>
+  <div class="pair">
+   <figure class="rv"><img class="" src="img/i_cozinha-900.webp" srcset="img/i_cozinha-900.webp 900w, img/i_cozinha-1800.webp 1800w" sizes="(max-width:820px) 100vw, 50vw" alt="The kitchen" loading="lazy" decoding="async"><figcaption>The kitchen<span>6 m marble island</span></figcaption></figure>
+   <figure class="rv" style="--d:.12s"><img class="" src="img/i_jantar-900.webp" srcset="img/i_jantar-900.webp 900w, img/i_jantar-1800.webp 1800w" sizes="(max-width:820px) 100vw, 50vw" alt="Dining room" loading="lazy" decoding="async"><figcaption>Dining room<span>Table for twelve</span></figcaption></figure>
+  </div>
+  <figure class="rv"><img class="" src="img/i_suite-900.webp" srcset="img/i_suite-900.webp 900w, img/i_suite-1800.webp 1800w" sizes="100vw" alt="The master suite" loading="lazy" decoding="async"><figcaption>The master suite<span>Onto a private garden</span></figcaption></figure>
+  <div class="pair">
+   <figure class="rv"><img class="" src="img/i_banho-900.webp" srcset="img/i_banho-900.webp 900w, img/i_banho-1800.webp 1800w" sizes="(max-width:820px) 100vw, 50vw" alt="Master bath" loading="lazy" decoding="async"><figcaption>Master bath<span>Calacatta marble</span></figcaption></figure>
+   <figure class="rv" style="--d:.12s"><img class="" src="img/i_closet-900.webp" srcset="img/i_closet-900.webp 900w, img/i_closet-1800.webp 1800w" sizes="(max-width:820px) 100vw, 50vw" alt="Dressing room" loading="lazy" decoding="async"><figcaption>Dressing room<span>Walnut · bronze glass</span></figcaption></figure>
+   <figure class="rv"><img class="" src="img/i_wellness-900.webp" srcset="img/i_wellness-900.webp 900w, img/i_wellness-1800.webp 1800w" sizes="(max-width:820px) 100vw, 50vw" alt="Private spa" loading="lazy" decoding="async"><figcaption>Private spa<span>Sauna · hammam · plunge</span></figcaption></figure>
+   <figure class="rv" style="--d:.12s"><img class="" src="img/p_hall-900.webp" srcset="img/p_hall-900.webp 900w, img/p_hall-1800.webp 1800w" sizes="(max-width:820px) 100vw, 50vw" alt="Two-storey hall" loading="lazy" decoding="async"><figcaption>Two-storey residence<span>Double-height hall</span></figcaption></figure>
+  </div>
+ </div>
+</section>
+
+<section class="mat">
+ <div><div class="lbl b rv">Architecture</div><h2 class="rv" style="font-size:clamp(40px,6vw,80px);margin-top:18px">The stone of the place, <em>cut with precision.</em></h2></div>
+ <ul class="rv">
+  <li><span class="lbl">Walls</span><span>Minho granite, honed, in long courses on a split-granite base</span></li>
+  <li><span class="lbl">Glazing</span><span>Frameless glass up to 4.5 m high that slides into the walls</span></li>
+  <li><span class="lbl">Roofs</span><span>Planted with native grasses, patinated bronze fascia, oak soffits</span></li>
+  <li><span class="lbl">Floors</span><span>Smoked oak, 30 cm boards</span></li>
+  <li><span class="lbl">Stone</span><span>Calacatta and Estremoz marble in whole slabs</span></li>
+  <li><span class="lbl">Systems</span><span>Heat pump, radiant floors, heat-recovery ventilation, home automation, NZEB</span></li>
+ </ul>
+</section>
+
+<section class="plans" id="plans">
+ <div class="lbl b rv">Floor plans</div><h2 class="rv" style="margin-top:16px">Drawn <em>to scale.</em></h2>
+ <div class="tabs" role="tablist"><button class="tab on" data-i="0">Single-storey</button><button class="tab" data-i="1">Two-storey</button><button class="tab" data-i="2">Hotel</button></div>
+ <figure class="pane on"><a href="img/plan_T.webp" target="_blank" rel="noopener"><img src="img/plan_T.webp" alt="Single-storey floor plan" loading="lazy"></a><figcaption>L-plan · 4 or 5 bedrooms · 444 m² · 18 plots<span>Tap to open full size</span></figcaption></figure><figure class="pane"><a href="img/plan_P.webp" target="_blank" rel="noopener"><img src="img/plan_P.webp" alt="Two-storey floor plan" loading="lazy"></a><figcaption>5 bedrooms · 422 m² · 2 plots above the lake<span>Tap to open full size</span></figcaption></figure><figure class="pane"><a href="img/plan_H.webp" target="_blank" rel="noopener"><img src="img/plan_H.webp" alt="Hotel floor plan" loading="lazy"></a><figcaption>15 suites · spa · pools · 2,482 m²<span>Tap to open full size</span></figcaption></figure>
+</section>
+
+<section class="full" id="hotel"><div class="px" data-px><img class="" src="img/ht_chegada-900.webp" srcset="img/ht_chegada-900.webp 900w, img/ht_chegada-1800.webp 1800w" sizes="100vw" alt="The hotel at dusk" loading="lazy" decoding="async"></div><div class="cap"><div class="lbl">The hotel &amp; spa</div><h2>Fifteen suites,<br><em>a spa, two pools.</em></h2></div></section>
+
+<section class="split"><div class="t"><div class="lbl b rv">The hotel</div><h2 class="rv">A small hotel <em>that serves the estate.</em></h2><p class="rv">Two floors by the gate, an arrival court with a fountain and an eight-metre glass hall, a lounge and bar, a restaurant on the terrace, a spa with an indoor pool and a 25 m outdoor pool, a wine room, a library, a cigar lounge and a cinema. Suites of 62 to 80 m². The concierge looks after the houses too.</p></div>
+ <div class="i"><img class="" src="img/ht_piscina-900.webp" srcset="img/ht_piscina-900.webp 900w, img/ht_piscina-1800.webp 1800w" sizes="(max-width:820px) 100vw, 50vw" alt="The hotel pool" loading="lazy" decoding="async"></div></section>
+
+<div class="amen">
+ <figure class="rv"><img class="" src="img/ht_lobby-900.webp" srcset="img/ht_lobby-900.webp 900w, img/ht_lobby-1800.webp 1800w" sizes="(max-width:820px) 50vw, 33vw" alt="Entrance hall" loading="lazy" decoding="async"><figcaption><span>01</span>Entrance hall</figcaption></figure>
+ <figure class="rv" style="--d:.1s"><img class="" src="img/ht_rest-900.webp" srcset="img/ht_rest-900.webp 900w, img/ht_rest-1800.webp 1800w" sizes="(max-width:820px) 50vw, 33vw" alt="Restaurant" loading="lazy" decoding="async"><figcaption><span>02</span>Restaurant</figcaption></figure>
+ <figure class="rv" style="--d:.2s"><img class="" src="img/ht_spa-900.webp" srcset="img/ht_spa-900.webp 900w, img/ht_spa-1800.webp 1800w" sizes="(max-width:820px) 50vw, 33vw" alt="Spa" loading="lazy" decoding="async"><figcaption><span>03</span>Spa</figcaption></figure>
+ <figure class="rv"><img class="" src="img/ht_wine-900.webp" srcset="img/ht_wine-900.webp 900w, img/ht_wine-1800.webp 1800w" sizes="(max-width:820px) 50vw, 33vw" alt="Wine room" loading="lazy" decoding="async"><figcaption><span>04</span>Wine room</figcaption></figure>
+ <figure class="rv" style="--d:.1s"><img class="" src="img/ht_lib-900.webp" srcset="img/ht_lib-900.webp 900w, img/ht_lib-1800.webp 1800w" sizes="(max-width:820px) 50vw, 33vw" alt="Library" loading="lazy" decoding="async"><figcaption><span>05</span>Library</figcaption></figure>
+ <figure class="rv" style="--d:.2s"><img class="" src="img/ht_suite-900.webp" srcset="img/ht_suite-900.webp 900w, img/ht_suite-1800.webp 1800w" sizes="(max-width:820px) 100vw, 33vw" alt="Suite" loading="lazy" decoding="async"><figcaption><span>06</span>Suite</figcaption></figure>
+</div>
+
+<section class="full"><div class="px" data-px><img class="" src="img/ht_terraco-900.webp" srcset="img/ht_terraco-900.webp 900w, img/ht_terraco-1800.webp 1800w" sizes="100vw" alt="Dinner on the hotel terrace" loading="lazy" decoding="async"></div><div class="cap"><div class="lbl">Evening</div><h2>Dinner <em>on the terrace.</em></h2></div></section>
+
+<section class="units dark" id="availability">
+ <div class="lbl rv">Availability</div><h2 class="rv" style="margin-top:16px">The residences</h2>
+ <ol><li class="unit rv"><span class="u-id">R01</span><span class="u-name">Single-storey residence · L</span><span class="u-meta">4–5 bed · 444 m² · plot 3 030 m²</span><span class="u-price"><span class="res">On request</span></span></li><li class="unit rv"><span class="u-id">R02</span><span class="u-name">Single-storey residence · L</span><span class="u-meta">4–5 bed · 444 m² · plot 2 962 m²</span><span class="u-price"><span class="res">On request</span></span></li><li class="unit rv"><span class="u-id">R03</span><span class="u-name">Single-storey residence · L</span><span class="u-meta">4–5 bed · 444 m² · plot 2 894 m²</span><span class="u-price"><span class="res">On request</span></span></li><li class="unit rv"><span class="u-id">R04</span><span class="u-name">Single-storey residence · L</span><span class="u-meta">4–5 bed · 444 m² · plot 2 909 m²</span><span class="u-price"><span class="res">On request</span></span></li><li class="unit rv"><span class="u-id">R05</span><span class="u-name">Single-storey residence · L</span><span class="u-meta">4–5 bed · 444 m² · plot 3 157 m²</span><span class="u-price"><span class="res">On request</span></span></li><li class="unit rv"><span class="u-id">R06</span><span class="u-name">Single-storey residence · L</span><span class="u-meta">4–5 bed · 444 m² · plot 3 220 m²</span><span class="u-price"><span class="res">On request</span></span></li><li class="unit rv"><span class="u-id">R07</span><span class="u-name">Single-storey residence · L</span><span class="u-meta">4–5 bed · 444 m² · plot 2 844 m²</span><span class="u-price"><span class="res">On request</span></span></li><li class="unit rv"><span class="u-id">R08</span><span class="u-name">Single-storey residence · L</span><span class="u-meta">4–5 bed · 444 m² · plot 2 934 m²</span><span class="u-price"><span class="res">On request</span></span></li><li class="unit rv"><span class="u-id">R09</span><span class="u-name">Single-storey residence · L</span><span class="u-meta">4–5 bed · 444 m² · plot 3 238 m²</span><span class="u-price"><span class="res">On request</span></span></li><li class="unit rv"><span class="u-id">R10</span><span class="u-name">Single-storey residence · L</span><span class="u-meta">4–5 bed · 444 m² · plot 2 982 m²</span><span class="u-price"><span class="res">On request</span></span></li><li class="unit rv"><span class="u-id">R11</span><span class="u-name">Single-storey residence · L</span><span class="u-meta">4–5 bed · 444 m² · plot 3 327 m²</span><span class="u-price"><span class="res">On request</span></span></li><li class="unit rv"><span class="u-id">R12</span><span class="u-name">Single-storey residence · L</span><span class="u-meta">4–5 bed · 444 m² · plot 3 019 m²</span><span class="u-price"><span class="res">On request</span></span></li><li class="unit rv"><span class="u-id">R13</span><span class="u-name">Single-storey residence · L</span><span class="u-meta">4–5 bed · 444 m² · plot 2 817 m²</span><span class="u-price"><span class="res">On request</span></span></li><li class="unit rv"><span class="u-id">R14</span><span class="u-name">Single-storey residence · L</span><span class="u-meta">4–5 bed · 444 m² · plot 3 245 m²</span><span class="u-price"><span class="res">On request</span></span></li><li class="unit rv"><span class="u-id">R15</span><span class="u-name">Single-storey residence · L</span><span class="u-meta">4–5 bed · 444 m² · plot 3 248 m²</span><span class="u-price"><span class="res">On request</span></span></li><li class="unit rv"><span class="u-id">R16</span><span class="u-name">Single-storey residence · L</span><span class="u-meta">4–5 bed · 444 m² · plot 3 044 m²</span><span class="u-price"><span class="res">On request</span></span></li><li class="unit rv"><span class="u-id">R17</span><span class="u-name">Two-storey residence</span><span class="u-meta">5 bed · 422 m² · plot 3 276 m²</span><span class="u-price"><span class="res">On request</span></span></li><li class="unit rv"><span class="u-id">R18</span><span class="u-name">Single-storey residence · L</span><span class="u-meta">4–5 bed · 444 m² · plot 2 965 m²</span><span class="u-price"><span class="res">On request</span></span></li><li class="unit rv"><span class="u-id">R19</span><span class="u-name">Single-storey residence · L</span><span class="u-meta">4–5 bed · 444 m² · plot 2 776 m²</span><span class="u-price"><span class="res">On request</span></span></li><li class="unit rv"><span class="u-id">R20</span><span class="u-name">Two-storey residence</span><span class="u-meta">5 bed · 422 m² · plot 3 248 m²</span><span class="u-price"><span class="res">On request</span></span></li></ol>
+ <p class="note">Preliminary study, October 2026. Two residences are reserved for the founders' family. Areas and specifications may change with the final design and licensing.</p>
+</section>
+
+<section class="loc">
+ <div><div class="lbl b rv">Location</div><h2 class="rv" style="margin-top:16px">Minho, <em>Portugal.</em></h2><p class="rv" style="margin-top:24px">Taíde, Póvoa de Lanhoso. The green north of Portugal: granite, oak woods, vineyards and rivers, a mild Atlantic climate and four real seasons.</p></div>
+ <ul class="facts rv"><li><span>Braga</span><span>≈ 30 min</span></li><li><span>Porto Airport</span><span>≈ 1 h</span></li><li><span>Peneda-Gerês National Park</span><span>≈ 30 min</span></li><li><span>Atlantic coast</span><span>≈ 1 h</span></li><li><span>Estate</span><span>8 ha, walled</span></li></ul>
+</section>
+
+<section class="cta dark" id="contact">
+ <div class="lbl rv">By appointment</div>
+ <h2 class="rv" style="margin-top:20px">A private<br><em>presentation.</em></h2>
+ <form class="cf rv" id="cf" action="mailto:" method="POST">
+  <input type="hidden" name="_subject" value="EIDO — new enquiry"><input type="hidden" name="_captcha" value="false"><input type="text" name="_honey" style="display:none">
+  <label><span class="lbl">Name</span><input name="name" required autocomplete="name"></label>
+  <label><span class="lbl">Email</span><input name="email" type="email" required autocomplete="email"></label>
+  <label><span class="lbl">Phone</span><input name="phone" type="tel" autocomplete="tel"></label>
+  <label><span class="lbl">Interest</span><select name="interest"><option>A residence</option><option>The hotel</option><option>Both</option></select></label>
+  <label class="wide"><span class="lbl">Message</span><textarea name="message" rows="3"></textarea></label>
+  <button type="submit" class="send"><span>Request a presentation</span></button>
+  <p class="ok" id="cfok" hidden>Thank you. We will be in touch personally.</p>
+ </form>
+</section>
+<footer class="ft dark">
+ <img src="img/logo_light.svg" alt="EIDO">
+ <p>All images are computer-generated illustrations of a design in preliminary study and are not contractual. Plans are schematic, to scale, not construction documents. EIDO is a working name.</p>
+</footer>
+</main>
+
+<script>
+(()=>{
+const hd=document.getElementById('hd');let ly=scrollY;
+const onS=()=>{const y=scrollY;hd.classList.toggle('solid',y>innerHeight*.85);hd.classList.toggle('hide',y>ly&&y>innerHeight&&!document.body.classList.contains('mopen'));ly=y;};
+addEventListener('scroll',onS,{passive:true});onS();
+const b=document.getElementById('burger'),m=document.getElementById('menu');
+b.onclick=()=>{m.classList.toggle('open');document.body.classList.toggle('mopen')};
+m.querySelectorAll('a').forEach(a=>a.onclick=()=>{m.classList.remove('open');document.body.classList.remove('mopen')});
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.15,rootMargin:'0px 0px -8% 0px'});
+document.querySelectorAll('.rv,.stack figure').forEach(el=>io.observe(el));
+// words
+const W=document.querySelector('[data-words]');
+const wrap=n=>{[...n.childNodes].forEach(c=>{if(c.nodeType===3){const f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(t=>{if(t.trim()){const s=document.createElement('span');s.className='w';s.textContent=t;f.appendChild(s)}else f.appendChild(document.createTextNode(t))});c.replaceWith(f)}else if(c.nodeType===1){c.classList.add('w')}})};
+wrap(W);const ws=[...W.querySelectorAll('.w')];
+const words=()=>{const r=W.getBoundingClientRect();const p=Math.min(1,Math.max(0,(innerHeight*.85-r.top)/(r.height+innerHeight*.35)));const n=Math.round(p*ws.length);ws.forEach((w,i)=>w.classList.toggle('on',i<n))};
+// parallax
+const px=[...document.querySelectorAll('[data-px]')];
+const para=()=>px.forEach(el=>{const r=el.parentElement.getBoundingClientRect();if(r.bottom<0||r.top>innerHeight)return;const p=(r.top+r.height/2-innerHeight/2)/innerHeight;el.style.transform=`translate3d(0,${p*-6}%,0)`});
+let tick=false;addEventListener('scroll',()=>{if(!tick){requestAnimationFrame(()=>{words();para();tick=false});tick=true}},{passive:true});words();para();
+// counters
+const cio=new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;const el=e.target,t=+el.dataset.count,s=el.dataset.suffix||'';let t0=null;const st=ts=>{t0??=ts;const k=Math.min(1,(ts-t0)/1600),v=Math.round(t*(1-Math.pow(1-k,4)));el.textContent=v.toLocaleString('en')+s;if(k<1)requestAnimationFrame(st)};requestAnimationFrame(st);cio.unobserve(el)}),{threshold:.6});
+document.querySelectorAll('[data-count]').forEach(el=>cio.observe(el));
+// gallery progress
+const tr=document.getElementById('track'),pg=document.getElementById('prog');
+const gp=()=>{const max=tr.scrollWidth-tr.clientWidth;const v=max>0?tr.scrollLeft/max:0;pg.style.width=(10+v*90)+'%'};tr.addEventListener('scroll',gp,{passive:true});gp();
+// form
+const cf=document.getElementById('cf');cf.addEventListener('submit',async e=>{if(!cf.action.startsWith('http'))return;e.preventDefault();const b=cf.querySelector('.send');b.disabled=true;try{const r=await fetch(cf.action.replace('formsubmit.co/','formsubmit.co/ajax/'),{method:'POST',headers:{'Accept':'application/json'},body:new FormData(cf)});if(r.ok){cf.querySelectorAll('label,.send').forEach(x=>x.style.display='none');document.getElementById('cfok').hidden=false}else b.disabled=false}catch(_){b.disabled=false}});
+// tabs
+const tabs=[...document.querySelectorAll('.tab')],panes=[...document.querySelectorAll('.pane')];
+tabs.forEach(t=>t.onclick=()=>{tabs.forEach(x=>x.classList.remove('on'));panes.forEach(x=>x.classList.remove('on'));t.classList.add('on');panes[+t.dataset.i].classList.add('on');t.scrollIntoView({inline:'center',block:'nearest',behavior:'smooth'})});
+})();
+</script>
+</body></html>

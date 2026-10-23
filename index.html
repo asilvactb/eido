@@ -288,6 +288,45 @@ p{margin:0}
 .sn{border-bottom:1px solid rgba(255,255,255,.22);padding-bottom:14px;width:calc(100% - 8vw);margin-left:max(16px,calc(env(safe-area-inset-left,0px) + 4vw));padding-left:0!important;padding-right:0!important}
 .sn.static{width:auto;margin-left:0}
 .hs-card .ph img{filter:contrast(1.05) saturate(.9)}
+
+/* ---- v04: full-bleed plan chapter with camera ---- */
+.mapch{position:relative;height:100vh;height:100svh;min-height:600px;padding:0;background:#141A16;overflow:hidden}
+.mapfull{position:absolute;inset:0;aspect-ratio:auto;border:0;background:radial-gradient(120% 100% at 60% 45%,#1C241E 0%,#121713 70%)}
+.mapfull #map{position:absolute;inset:0;width:100%;height:100%}
+.m-shade{position:absolute;inset:0;pointer-events:none;z-index:3;background:linear-gradient(90deg,rgba(12,15,13,.85) 0%,rgba(12,15,13,.45) 30%,rgba(12,15,13,0) 52%),linear-gradient(0deg,rgba(12,15,13,.6) 0%,rgba(12,15,13,0) 30%)}
+.mapch .sn{z-index:5}
+.m-copy{position:absolute;left:0;bottom:9vh;z-index:5;display:flex;flex-direction:column;gap:22px;max-width:min(640px,100%)}
+.m-copy .chips{justify-content:flex-start;margin-top:4px}
+.mapch h2{font-size:clamp(46px,6vw,98px);line-height:.9;color:#fff}
+.mapch h2 em{color:#D9B385}
+.chips button{background:rgba(15,20,17,.5)}
+.m-photo,.m-aerial{position:absolute;inset:0;z-index:2;opacity:0;pointer-events:none;overflow:hidden}
+.m-photo img,.m-aerial img{width:100%;height:100%;object-fit:cover;filter:contrast(1.08) saturate(.82) brightness(.85)}
+.m-photo::after{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(12,15,13,.75),rgba(12,15,13,0) 60%),linear-gradient(0deg,rgba(12,15,13,.7),rgba(12,15,13,0) 45%)}
+.m-dive{position:absolute;left:0;bottom:9vh;z-index:6;display:flex;flex-direction:column;gap:20px;max-width:min(620px,100%)}
+.d-title{font-family:var(--f-display);font-weight:300;font-style:italic;font-size:clamp(64px,9vw,150px);line-height:.86;letter-spacing:-.04em;color:#fff;margin:0}
+.panel{position:absolute;right:max(16px,calc(env(safe-area-inset-right,0px) + 4vw));top:50%;transform:translateY(-50%);z-index:6;width:min(360px,calc(100% - 32px));min-height:0;background:rgba(15,20,17,.82);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px)}
+.p-close{position:absolute;top:10px;right:14px;background:none;border:0;color:var(--mist);font-size:26px;cursor:pointer;line-height:1}
+.m-view{position:absolute;right:max(16px,calc(env(safe-area-inset-right,0px) + 4vw));bottom:9vh;z-index:6}
+#map .dot{cursor:pointer}
+#map .dot .halo{fill:rgba(184,139,87,.25)}
+#map .dot .ring{fill:none;stroke:#D9B385;stroke-width:1.2;transform-box:fill-box;transform-origin:center;animation:ping 2.6s var(--ease) infinite}
+#map .dot .core{fill:#9A6A3C;stroke:#E8C9A0;stroke-width:1}
+#map .dot text{font-family:var(--f-display);font-size:11px;fill:#fff;text-anchor:middle;dominant-baseline:central;pointer-events:none}
+#map .dot:hover .core,#map .dot:focus .core{fill:#B88B57}
+#map .dot .lbl{font-family:var(--f-mono);font-size:8px;letter-spacing:.14em;text-transform:uppercase;fill:#E9E4D8;text-anchor:start}
+#map .am{display:none}
+@media (max-width:860px){
+  .mapch{height:auto;min-height:0;display:flex;flex-direction:column;padding-block:14vh 8vh}
+  .mapch .sn{position:relative;top:auto;margin-bottom:24px}
+  .m-copy{position:relative;bottom:auto}
+  .mapfull{position:relative;height:110vw;margin-top:28px}
+  .m-shade{display:none}
+  .m-dive{position:absolute;bottom:4vh}
+  .panel{position:fixed;top:auto;bottom:12px;left:12px;right:12px;width:auto;transform:none;z-index:70}
+  .m-view{position:relative;right:auto;bottom:auto;align-self:flex-start;margin:18px 16px 0}
+}
+@media (max-width:860px){html{scroll-snap-type:y proximity}.hero,.cine,.fin,.formch,.contact{scroll-snap-align:start}}
 </style>
 </head>
 <body>
@@ -299,7 +338,7 @@ p{margin:0}
 <header class="hdr" id="hdr">
   <a class="brand" href="#top" data-go="top">Souto <em>d'Ave</em></a>
   <nav class="nav" aria-label="Capítulos">
-    <a href="#vale" data-go="vale">O vale</a><a href="#colecoes" data-go="colecoes">Moradias</a><a href="#interiores" data-go="interiores">Interiores</a><a href="#materiais" data-go="materiais">Materiais</a><a href="#planta" data-go="planta">Planta</a><a href="#lugar" data-go="lugar">O lugar</a>
+    <a href="#vale" data-go="vale">O vale</a><a href="#planta" data-go="planta">Planta</a><a href="#colecoes" data-go="colecoes">Moradias</a><a href="#interiores" data-go="interiores">Interiores</a><a href="#materiais" data-go="materiais">Materiais</a><a href="#lugar" data-go="lugar">O lugar</a>
   </nav>
   <div class="hcta">
     <a class="pill ghost" href="#brochura" data-go="brochura"><span class="sw"><span>Brochura</span><span aria-hidden="true">Brochura</span></span></a>
@@ -364,11 +403,49 @@ p{margin:0}
   <span class="artist mono">Imagem ilustrativa</span>
 </section>
 
+<section class="chapter mapch" id="planta">
+  <div class="mapfull" id="mapStage">
+    <svg id="map" role="img" aria-label="Planta de implantação interativa"><g id="camg"></g></svg>
+    <div class="m-aerial" id="mAerial" aria-hidden="true"><img src="img/aerea-1800.webp" alt="" loading="lazy"></div>
+    <div class="m-photo" id="mPhoto" aria-hidden="true"><img id="mPhotoImg" alt=""></div>
+    <div class="tip" id="tip"></div>
+  </div>
+  <div class="m-shade" aria-hidden="true"></div>
+  <div class="sn wrap"><span class="sn-mask"><span class="sn-num">02</span></span><span class="sn-text mono">A planta</span></div>
+  <div class="m-copy wrap" id="mCopy">
+    <span class="eyebrow">Masterplan</span>
+    <h2><span class="sp">Escolha a sua encosta.</span> <em class="sp">Cada lote, a sua vista.</em></h2>
+    <p class="lede">Passe o cursor sobre uma moradia para ver o lote, a área e o preço. Toque num ponto numerado para descer até ao lugar.</p>
+    <div class="chips" id="chips" role="group" aria-label="Filtrar por coleção">
+      <button type="button" class="on" data-z="all">Todas</button><button type="button" data-z="alto">Nascente Alto</button><button type="button" data-z="nascente">Nascente</button><button type="button" data-z="poente">Poente</button><button type="button" data-z="lago">Casas do Lago</button>
+    </div>
+  </div>
+  <div class="m-dive wrap" id="mDive" hidden>
+    <span class="eyebrow" id="dNum"></span>
+    <h3 class="d-title" id="dTitle"></h3>
+    <p class="lede" id="dText"></p>
+    <button class="pill ghost light" type="button" id="dBack"><span class="sw"><span>Voltar à planta</span><span aria-hidden="true">Voltar à planta</span></span></button>
+  </div>
+  <aside class="panel" id="panel" aria-live="polite" hidden>
+    <button class="p-close" type="button" id="pClose" aria-label="Fechar">×</button>
+    <span class="eyebrow" id="pZone"></span>
+    <p class="p-id" id="pId"></p>
+    <dl class="p-spec">
+      <div><dt>Lote</dt><dd id="pArea"></dd></div><div><dt>Área útil</dt><dd id="pUtil"></dd></div>
+      <div><dt>Casa</dt><dd id="pTipo"></dd></div><div><dt>Vista</dt><dd id="pVista"></dd></div>
+      <div><dt>Cota</dt><dd id="pCota"></dd></div><div><dt>Fase</dt><dd id="pFase"></dd></div>
+    </dl>
+    <div class="p-price"><span class="mono">Desde</span><b id="pPrice"></b></div>
+    <button class="pill solid wide" type="button" id="pAsk"><span class="sw"><span>Pedir planta deste lote</span><span aria-hidden="true">Pedir planta deste lote</span></span></button>
+  </aside>
+  <button class="pill ghost light m-view" type="button" id="mView"><span class="sw"><span>Ver de cima</span><span aria-hidden="true">Ver de cima</span></span></button>
+</section>
+
 <div id="colecoes"></div>
 <section class="chapter cine" id="alto">
   <div class="bg"><img src="img/i01_sala-1800.webp" srcset="img/i01_sala-900.webp 900w, img/i01_sala-1800.webp 1800w" sizes="100vw" alt="Sala com lareira de granito aberta para o vale" loading="lazy"></div>
   <div class="shade"></div>
-  <div class="sn wrap"><span class="sn-mask"><span class="sn-num">02</span></span><span class="sn-text mono">Nascente Alto</span></div>
+  <div class="sn wrap"><span class="sn-mask"><span class="sn-num">03</span></span><span class="sn-text mono">Nascente Alto</span></div>
   <div class="copy wrap">
     <h2><span class="sp">Acima das copas.</span> <em class="sp">O vale inteiro à frente.</em></h2>
     <p class="lede">As sete moradias das cotas mais altas, com as vistas mais longas. Térreas com pátio central ou em dois pisos, com o piso inferior encaixado na encosta.</p>
@@ -381,7 +458,7 @@ p{margin:0}
 <section class="chapter cine right" id="nascente">
   <div class="bg"><img src="img/casa-1800.webp" srcset="img/casa-900.webp 900w, img/casa-1800.webp 1800w" sizes="100vw" alt="Moradia térrea com pátio e piscina" loading="lazy"></div>
   <div class="shade"></div>
-  <div class="sn wrap"><span class="sn-mask"><span class="sn-num">03</span></span><span class="sn-text mono">Nascente</span></div>
+  <div class="sn wrap"><span class="sn-mask"><span class="sn-num">04</span></span><span class="sn-text mono">Nascente</span></div>
   <div class="copy wrap">
     <h2><span class="sp">A encosta das manhãs.</span> <em class="sp">Luz desde o primeiro raio.</em></h2>
     <p class="lede">Dez moradias T4 e T5 nos socalcos do nascente, perto da entrada e das áreas comuns. É aqui que arranca a primeira fase.</p>
@@ -394,7 +471,7 @@ p{margin:0}
 <section class="chapter cine" id="poente">
   <div class="bg"><img src="img/int_jantar-1800.webp" srcset="img/int_jantar-900.webp 900w, img/int_jantar-1800.webp 1800w" sizes="100vw" alt="Sala de jantar aberta para a paisagem ao fim da tarde" loading="lazy"></div>
   <div class="shade"></div>
-  <div class="sn wrap"><span class="sn-mask"><span class="sn-num">04</span></span><span class="sn-text mono">Poente</span></div>
+  <div class="sn wrap"><span class="sn-mask"><span class="sn-num">05</span></span><span class="sn-text mono">Poente</span></div>
   <div class="copy wrap">
     <h2><span class="sp">Sol até ao fim do dia.</span> <em class="sp">Os jardins mais planos.</em></h2>
     <p class="lede">A encosta poente recebe o sol da tarde até ao fim. Lotes maiores e mais planos, para quem quer jardim, horta e piscina ao nível da casa.</p>
@@ -407,7 +484,7 @@ p{margin:0}
 <section class="chapter cine right" id="lago">
   <div class="bg"><img src="img/casas_lago-1800.webp" srcset="img/casas_lago-900.webp 900w, img/casas_lago-1800.webp 1800w" sizes="100vw" alt="Casas do lago nos socalcos de granito sobre a água" loading="lazy"></div>
   <div class="shade"></div>
-  <div class="sn wrap"><span class="sn-mask"><span class="sn-num">05</span></span><span class="sn-text mono">Casas do Lago</span></div>
+  <div class="sn wrap"><span class="sn-mask"><span class="sn-num">06</span></span><span class="sn-text mono">Casas do Lago</span></div>
   <div class="copy wrap">
     <h2><span class="sp">Nos socalcos antigos.</span> <em class="sp">A água à porta.</em></h2>
     <p class="lede">Três grupos de quatro casas T3 sobre os muros de granito que já existem, junto aos lagos. Entra-se por cima e cada casa desce em degraus até um jardim virado à ravina.</p>
@@ -420,16 +497,17 @@ p{margin:0}
 <section class="chapter hs" id="interiores">
   <div class="hs-stage">
     <div class="hs-head wrap">
-      <div class="sn static"><span class="sn-mask"><span class="sn-num">06</span></span><span class="sn-text mono">Interiores</span></div>
+      <div class="sn static"><span class="sn-mask"><span class="sn-num">07</span></span><span class="sn-text mono">Interiores</span></div>
       <h2><span class="sp">Pé-direito alto.</span> <em class="sp">Paredes que se abrem.</em></h2>
     </div>
     <div class="hs-track" id="track">
       <figure class="hs-card w"><div class="ph"><img src="img/i01_sala-1800.webp" alt="Sala com lareira de granito aberta para o pátio e para o vale" loading="lazy"></div><figcaption><span>Sala com lareira de granito, aberta ao pátio e ao vale</span><span class="mono">01</span></figcaption></figure>
       <figure class="hs-card t"><div class="ph"><img src="img/i03_suite-1800.webp" alt="Suite principal com vista para o vale com névoa ao amanhecer" loading="lazy"></div><figcaption><span>Suite principal, o vale ao amanhecer</span><span class="mono">02</span></figcaption></figure>
-      <figure class="hs-card w"><div class="ph"><img src="img/i02_cozinha-1800.webp" alt="Sala de jantar e cozinha entre o terraço com piscina e o jardim central" loading="lazy"></div><figcaption><span>Jantar e cozinha entre o vale e o jardim central</span><span class="mono">03</span></figcaption></figure>
-      <figure class="hs-card t"><div class="ph"><img src="img/int_banho-1800.webp" alt="Casa de banho com banheira de pedra" loading="lazy"></div><figcaption><span>Banheira de pedra, duche de chão</span><span class="mono">04</span></figcaption></figure>
-      <figure class="hs-card w"><div class="ph"><img src="img/int_jantar-1800.webp" alt="Sala de jantar aberta para o lago" loading="lazy"></div><figcaption><span>Jantar com a parede de vidro aberta</span><span class="mono">05</span></figcaption></figure>
-      <figure class="hs-card w"><div class="ph"><img src="img/garrafeira-1800.webp" alt="Garrafeira em abóbada de granito" loading="lazy"></div><figcaption><span>Garrafeira escavada na encosta</span><span class="mono">06</span></figcaption></figure>
+      <figure class="hs-card t"><div class="ph"><img src="img/i04_closet-1800.webp" alt="Closet da suite em carvalho com janela para o bosque" loading="lazy"></div><figcaption><span>Closet da suite, em carvalho</span><span class="mono">03</span></figcaption></figure>
+      <figure class="hs-card w"><div class="ph"><img src="img/i02_cozinha-1800.webp" alt="Sala de jantar e cozinha entre o terraço com piscina e o jardim central" loading="lazy"></div><figcaption><span>Jantar e cozinha entre o vale e o jardim central</span><span class="mono">04</span></figcaption></figure>
+      <figure class="hs-card t"><div class="ph"><img src="img/i05_banho-1800.webp" alt="Casa de banho da suite com banheira de pedra virada ao bosque" loading="lazy"></div><figcaption><span>Banheira de pedra, duche de chão</span><span class="mono">05</span></figcaption></figure>
+      <figure class="hs-card w"><div class="ph"><img src="img/int_jantar-1800.webp" alt="Sala de jantar aberta para o lago" loading="lazy"></div><figcaption><span>Jantar com a parede de vidro aberta</span><span class="mono">06</span></figcaption></figure>
+      <figure class="hs-card w"><div class="ph"><img src="img/garrafeira-1800.webp" alt="Garrafeira em abóbada de granito" loading="lazy"></div><figcaption><span>Garrafeira escavada na encosta</span><span class="mono">07</span></figcaption></figure>
     </div>
     <div class="hs-foot wrap"><div class="hs-prog"><i id="hsprog"></i></div><span class="mono">Imagens ilustrativas</span></div>
   </div>
@@ -438,7 +516,7 @@ p{margin:0}
 <section class="chapter fin" id="materiais">
   <div class="bg fin-bg"><img class="on" data-k="granito" src="img/materiais-1800.webp" alt="Pormenor de granito serrado, carvalho e linho" loading="lazy"><img data-k="carvalho" src="img/i02_cozinha-1800.webp" alt="" loading="lazy"><img data-k="bronze" src="img/sala_entrada-1800.webp" alt="" loading="lazy"><img data-k="agua" src="img/vista-1800.webp" alt="" loading="lazy"></div>
   <div class="shade"></div>
-  <div class="sn wrap"><span class="sn-mask"><span class="sn-num">07</span></span><span class="sn-text mono">Materiais</span></div>
+  <div class="sn wrap"><span class="sn-mask"><span class="sn-num">08</span></span><span class="sn-text mono">Materiais</span></div>
   <div class="copy wrap">
     <h2><span class="sp">Pedra da terra.</span> <em class="sp">Madeira que envelhece bem.</em></h2>
     <p class="lede" id="finTxt">Granito do Minho serrado em peças grandes, nas fachadas, nas lareiras e nos muros dos socalcos.</p>
@@ -451,33 +529,7 @@ p{margin:0}
   </div>
 </section>
 
-<section class="chapter mapch" id="planta">
-  <div class="map-head wrap">
-    <div class="sn static"><span class="sn-mask"><span class="sn-num">08</span></span><span class="sn-text mono">A planta</span></div>
-    <h2><span class="sp">Escolha a sua encosta.</span> <em class="sp">Cada lote, a sua vista.</em></h2>
-    <div class="chips" id="chips" role="group" aria-label="Filtrar por coleção">
-      <button type="button" class="on" data-z="all">Todas</button><button type="button" data-z="alto">Nascente Alto</button><button type="button" data-z="nascente">Nascente</button><button type="button" data-z="poente">Poente</button><button type="button" data-z="lago">Casas do Lago</button>
-    </div>
-  </div>
-  <div class="map-grid wrap">
-    <div class="map-stage" id="mapStage"><div class="map-cam" id="mapCam"><svg id="map" role="img" aria-label="Planta de implantação interativa"></svg></div><div class="tip" id="tip"></div></div>
-    <aside class="panel" id="panel" aria-live="polite">
-      <div class="p-empty" id="pEmpty"><span class="eyebrow">Planta interativa</span><p>Passe o cursor sobre uma moradia para ver o lote, a área, a vista e o preço. No telemóvel, toque no lote.</p>
-        <ul class="legend"><li><i style="background:var(--z-alto)"></i>Nascente Alto</li><li><i style="background:var(--z-nascente)"></i>Nascente</li><li><i style="background:var(--z-poente)"></i>Poente</li><li><i style="background:var(--z-lago)"></i>Casas do Lago</li></ul></div>
-      <div class="p-lot" id="pLot" hidden>
-        <span class="eyebrow" id="pZone"></span>
-        <p class="p-id" id="pId"></p>
-        <dl class="p-spec">
-          <div><dt>Lote</dt><dd id="pArea"></dd></div><div><dt>Área útil</dt><dd id="pUtil"></dd></div>
-          <div><dt>Casa</dt><dd id="pTipo"></dd></div><div><dt>Vista</dt><dd id="pVista"></dd></div>
-          <div><dt>Cota</dt><dd id="pCota"></dd></div><div><dt>Fase</dt><dd id="pFase"></dd></div>
-        </dl>
-        <div class="p-price"><span class="mono">Desde</span><b id="pPrice"></b></div>
-        <button class="pill solid wide" type="button" id="pAsk"><span class="sw"><span>Pedir planta deste lote</span><span aria-hidden="true">Pedir planta deste lote</span></span></button>
-      </div>
-    </aside>
-  </div>
-</section>
+
 
 <section class="chapter cine" id="lugar">
   <div class="bg"><img src="img/vale-1800.webp" srcset="img/vale-900.webp 900w, img/vale-1800.webp 1800w" sizes="100vw" alt="O vale com névoa ao amanhecer" loading="lazy"></div>
@@ -536,7 +588,7 @@ p{margin:0}
   <div class="wrap">
     <p class="big"><span>Souto</span> <em>d'Ave</em></p>
     <div class="row">
-      <nav aria-label="Rodapé"><a href="#vale" data-go="vale">O vale</a><a href="#colecoes" data-go="colecoes">Moradias</a><a href="#interiores" data-go="interiores">Interiores</a><a href="#materiais" data-go="materiais">Materiais</a><a href="#planta" data-go="planta">Planta</a><a href="#lugar" data-go="lugar">O lugar</a><a href="#contacto" data-go="contacto">Contacto</a></nav>
+      <nav aria-label="Rodapé"><a href="#vale" data-go="vale">O vale</a><a href="#planta" data-go="planta">Planta</a><a href="#colecoes" data-go="colecoes">Moradias</a><a href="#interiores" data-go="interiores">Interiores</a><a href="#materiais" data-go="materiais">Materiais</a><a href="#lugar" data-go="lugar">O lugar</a><a href="#contacto" data-go="contacto">Contacto</a></nav>
       <span class="mono">Taíde · Póvoa de Lanhoso · Portugal</span>
     </div>
     <p class="legal">Projeto em fase de licenciamento. Imagens, plantas, áreas e preços são ilustrativos e indicativos, podem ser alterados sem aviso e não constituem proposta contratual. © 2026 Souto d'Ave.</p>
@@ -561,68 +613,163 @@ var ZSEL={alto:'Moradia Nascente Alto',nascente:'Moradia Nascente',poente:'Morad
 var euro=function(v){return v>=1e6?(String(v/1e6).replace('.',',')+' M€'):(Math.round(v/1000)+' mil €')};
 var smoother=null;
 
-/* ---------------- interactive plan ---------------- */
-var svg=$('#map'), stage=$('#mapStage'), tip=$('#tip'), NS='http://www.w3.org/2000/svg';
+/* ---------------- interactive plan: a camera over the masterplan ---------------- */
+var svg=$('#map'), camg=$('#camg'), stage=$('#mapStage'), tip=$('#tip'), NS='http://www.w3.org/2000/svg';
 function el(t,a,p){var e=document.createElementNS(NS,t);for(var k in a)e.setAttribute(k,a[k]);if(p)p.appendChild(e);return e}
-var lotEls={};
+var lotEls={}, dots=[];
+var DIVES=[
+  {id:'portaria',n:'01',x:530.9,y:759.3,t:'A chegada',d:'Uma só entrada pela N205, com portaria. A rua sobe entre muros de granito até às casas.',img:'img/rua-1800.webp'},
+  {id:'alto',n:'02',x:700,y:300,t:'O miradouro',d:'Do Nascente Alto vê-se o vale inteiro. As sete moradias das cotas mais altas, entre 238 e 247 m.',img:'img/vista-1800.webp'},
+  {id:'lago',n:'03',x:362,y:470,t:'Casas do Lago',d:'Doze casas T3 sobre os socalcos de granito que já existem, com a água à porta.',img:'img/casas_lago-1800.webp'},
+  {id:'padel',n:'04',x:407.3,y:524.1,t:'Padel',d:'Um campo de padel numa clareira do bosque, para os moradores.',img:null},
+  {id:'lagos',n:'05',x:428,y:700,t:'Lagos e barragem',d:'Dois lagos ligados pelo ribeiro e uma barragem antiga em granito, com um caminho pedonal à volta.',img:'img/lagos-1800.webp'},
+  {id:'ribeiro',n:'06',x:388.1,y:288.9,t:'O ribeiro',d:'O ribeiro desce pela ravina entre carvalhos. Cerca de um quarto do terreno fica como bosque comum.',img:null},
+  {id:'casa',n:'07',x:640,y:640,t:'A casa',d:'Térrea, com pátio central, piscina de 12 m e a sala inteira aberta para o vale.',img:'img/casa-1800.webp'}
+];
 (function build(){
-  svg.setAttribute('viewBox','0 0 '+M.w+' '+M.h); svg.setAttribute('preserveAspectRatio','xMidYMid meet');
-  var g0=el('g',{},svg);
+  var g0=el('g',{},camg);
   M.cont.forEach(function(c){el('path',{d:c[0],'class':'contour'+(c[1]?' m':'')},g0)});
-  el('path',{d:M.site,'class':'site'},svg); el('path',{d:M.green,'class':'green'},svg);
-  el('path',{d:M.road,'class':'road'},svg); el('path',{d:M.padel,'class':'padel'},svg);
-  el('path',{d:M.lakes,'class':'water'},svg); el('path',{d:M.stream,'class':'stream'},svg); el('path',{d:M.dam,'class':'dam'},svg);
-  var gl=el('g',{'class':'lots'},svg);
+  el('path',{d:M.site,'class':'site'},camg); el('path',{d:M.green,'class':'green'},camg);
+  el('path',{d:M.road,'class':'road'},camg); el('path',{d:M.padel,'class':'padel'},camg);
+  el('path',{d:M.lakes,'class':'water'},camg); el('path',{d:M.stream,'class':'stream'},camg); el('path',{d:M.dam,'class':'dam'},camg);
+  var gl=el('g',{'class':'lots'},camg);
   M.lots.forEach(function(L){
     var g=el('g',{'class':'lot '+L.zone,'data-id':L.id,tabindex:'0',role:'button','aria-label':L.id+', '+ZN[L.zone]+', lote de '+L.area+' m²'},gl);
     el('path',{d:L.lot,'class':'lp'},g); var h=el('path',{d:L.house,'class':'hp'},g);
     var t=el('text',{},g); t.textContent=L.id; g._h=h; g._t=t; g._d=L; lotEls[L.id]=g;
   });
-  var ga=el('g',{'class':'ams'},svg);
-  M.amen.forEach(function(a){var g=el('g',{'class':'am',transform:'translate('+a.x+' '+a.y+')'},ga);el('circle',{r:9,'class':'ring'},g);el('circle',{r:3.6,'class':'core'},g);var t=el('text',{x:12,y:4},g);t.textContent=a.n;var ti=el('title',{},g);ti.textContent=a.t});
+  var gd=el('g',{'class':'dots'},camg);
+  DIVES.forEach(function(D){
+    var g=el('g',{'class':'dot',tabindex:'0',role:'button','aria-label':D.n+' '+D.t},gd);
+    var s=el('g',{},g); el('circle',{r:16,'class':'halo'},s); el('circle',{r:13,'class':'ring'},s); el('circle',{r:10,'class':'core'},s);
+    var t=el('text',{y:.5},s); t.textContent=D.n;
+    g._s=s; g._D=D; dots.push(g);
+    g.addEventListener('click',function(e){e.stopPropagation();dive(D)});
+    g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();dive(D)}});
+  });
   requestAnimationFrame(function(){Object.keys(lotEls).forEach(function(k){var g=lotEls[k],b=g._h.getBBox();g._t.setAttribute('x',b.x+b.width/2);g._t.setAttribute('y',b.y+b.height/2)})});
 })();
+
+/* camera */
+var cam=null, base=null, mode='plan', flight=null, desk0=matchMedia('(min-width:861px)').matches;
+function baseVB(){
+  var r=stage.getBoundingClientRect(), asp=Math.max(.4,r.width/Math.max(1,r.height));
+  var h=M.h*1.06, w=h*asp; if(w<M.w*1.04){w=M.w*1.04;h=w/asp}
+  var cx=M.w/2-(desk0?w*.14:0), cy=M.h/2;
+  return [cx-w/2,cy-h/2,w,h];
+}
+function around(x,y,w,shift){var asp=base[3]/base[2],h=w*asp;return [x-w/2+(shift||0)*w,y-h/2,w,h]}
+function setVB(v){
+  cam=v; svg.setAttribute('viewBox',v.map(function(n){return n.toFixed(2)}).join(' '));
+  var k=v[2]/base[2]; dots.forEach(function(g){g._s.setAttribute('transform','translate('+g._D.x+' '+g._D.y+') scale('+Math.max(.08,k).toFixed(3)+')')});
+}
+function fly(to,dur,done){
+  if(flight)flight.kill();
+  var from=cam.slice(), o={t:0}, spin=(Math.random()<.5?-1:1)*3.5, lw0=Math.log(from[2]), lw1=Math.log(to[2]);
+  var cxf=from[0]+from[2]/2, cyf=from[1]+from[3]/2, cxt=to[0]+to[2]/2, cyt=to[1]+to[3]/2;
+  var tick=function(){
+    var t=o.t, w=Math.exp(lw0+(lw1-lw0)*t), k=(Math.abs(from[2]-to[2])<1e-6)?t:(from[2]-w)/(from[2]-to[2]); k=Math.min(1,Math.max(0,k));
+    var cx=cxf+(cxt-cxf)*k, cy=cyf+(cyt-cyf)*k, h=w*(to[3]/to[2]);
+    setVB([cx-w/2,cy-h/2,w,h]);
+    var a=Math.sin(Math.PI*t)*spin; camg.setAttribute('transform',Math.abs(a)>.05?'rotate('+a.toFixed(2)+' '+cx.toFixed(1)+' '+cy.toFixed(1)+')':'');
+  };
+  if(!has){o.t=1;tick();if(done)done();return}
+  flight=G.to(o,{t:1,duration:dur,ease:'power3.inOut',onUpdate:tick,onComplete:function(){camg.removeAttribute('transform');flight=null;if(done)done()}});
+}
+base=baseVB(); setVB(base.slice());
+addEventListener('resize',function(){var nb=baseVB();if(mode==='plan'&&!sel){base=nb;setVB(nb.slice())}else base=nb});
+
+/* lots: hover highlight + spec card, click flies to the lot */
 var sel=null, zoneF='all';
 function fill(L){
-  $('#pEmpty').hidden=true; $('#pLot').hidden=false;
+  $('#panel').hidden=false;
   $('#pZone').textContent=ZN[L.zone]; $('#pId').textContent=L.id;
   $('#pArea').textContent=L.area.toLocaleString('pt-PT')+' m²'; $('#pUtil').textContent=L.util+' m²';
   $('#pTipo').textContent=L.tipo; $('#pVista').textContent=L.vista;
   $('#pCota').textContent=Math.round(L.cota)+' m'; $('#pFase').textContent='Fase '+L.fase;
   $('#pPrice').textContent=euro(L.price);
-  if(has)G.fromTo(['#pId','#pPrice'],{yPercent:35,opacity:0},{yPercent:0,opacity:1,duration:.6,ease:'power3.out',stagger:.05,overwrite:true});
+  if(has)G.fromTo(['#pId','#pPrice'],{yPercent:35,opacity:0,filter:'blur(6px)'},{yPercent:0,opacity:1,filter:'blur(0px)',duration:.6,ease:'power3.out',stagger:.05,overwrite:true});
 }
-function hi(g,on){
+function hi(g){
   $$('.lot.hi',svg).forEach(function(x){x.classList.remove('hi')});
-  if(on&&g){g.classList.add('hi');svg.classList.add('has-hi');fill(g._d)}else{svg.classList.remove('has-hi');if(sel){sel.classList.add('hi');svg.classList.add('has-hi');fill(sel._d)}}
+  var t=g||sel;
+  if(t){t.classList.add('hi');svg.classList.add('has-hi');fill(t._d)}
+  else{svg.classList.remove('has-hi');$('#panel').hidden=true}
 }
 function moveTip(e){var r=stage.getBoundingClientRect();tip.style.left=(e.clientX-r.left)+'px';tip.style.top=(e.clientY-r.top)+'px'}
+function copyOut(on){if(has)G.to('#mCopy',{opacity:on?0:1,x:on?-30:0,filter:on?'blur(8px)':'blur(0px)',duration:.6,ease:'power2.out',pointerEvents:on?'none':'auto'});else $('#mCopy').style.opacity=on?0:1}
+function selectLot(g){
+  sel=g; hi(g); copyOut(true); mode='lot';
+  var b=g._h.getBBox(), cx=b.x+b.width/2, cy=b.y+b.height/2;
+  fly(around(cx,cy,Math.max(150,base[2]*.22),desk0?.12:0),1.6);
+}
+function backToPlan(){
+  sel=null; hi(null); mode='plan'; copyOut(false); hideDive(); fly(base.slice(),1.5);
+}
 Object.keys(lotEls).forEach(function(k){
   var g=lotEls[k];
-  g.addEventListener('pointerenter',function(e){if(e.pointerType==='touch')return;hi(g,true);tip.textContent=g._d.id+' · '+g._d.area.toLocaleString('pt-PT')+' m²';tip.classList.add('on');moveTip(e)});
+  g.addEventListener('pointerenter',function(e){if(e.pointerType==='touch'||mode==='dive')return;hi(g);tip.textContent=g._d.id+' · '+g._d.area.toLocaleString('pt-PT')+' m²';tip.classList.add('on');moveTip(e)});
   g.addEventListener('pointermove',moveTip);
-  g.addEventListener('pointerleave',function(){tip.classList.remove('on');hi(null,false)});
-  g.addEventListener('click',function(){sel=(sel===g)?null:g;hi(sel,!!sel)});
-  g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();sel=g;hi(g,true)}});
-  g.addEventListener('focus',function(){hi(g,true)});
+  g.addEventListener('pointerleave',function(){tip.classList.remove('on');hi(null)});
+  g.addEventListener('click',function(e){e.stopPropagation();if(mode==='dive')return;if(sel===g)backToPlan();else selectLot(g)});
+  g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();selectLot(g)}});
 });
+svg.addEventListener('click',function(){if(mode==='lot')backToPlan()});
+$('#pClose').addEventListener('click',backToPlan);
 function setZone(z){
   zoneF=z; $$('#chips button').forEach(function(b){b.classList.toggle('on',b.dataset.z===z)});
   svg.classList.toggle('filt',z!=='all');
-  Object.keys(lotEls).forEach(function(k){lotEls[k].classList.toggle('inz',z==='all'||lotEls[k]._d.zone===z)});
+  var xs=[],ys=[];
+  Object.keys(lotEls).forEach(function(k){var g=lotEls[k],on=z==='all'||g._d.zone===z;g.classList.toggle('inz',on);if(on&&z!=='all'){var b=g._h.getBBox();xs.push(b.x,b.x+b.width);ys.push(b.y,b.y+b.height)}});
+  if(z==='all'){if(mode!=='plan')backToPlan();else fly(base.slice(),1.2);return}
+  var x0=Math.min.apply(0,xs),x1=Math.max.apply(0,xs),y0=Math.min.apply(0,ys),y1=Math.max.apply(0,ys);
+  var w=Math.max((x1-x0)*1.9,(y1-y0)*1.9/(base[3]/base[2]),220);
+  fly(around((x0+x1)/2,(y0+y1)/2,w,desk0?-.12:0),1.4);
 }
 $$('#chips button').forEach(function(b){b.addEventListener('click',function(){setZone(b.dataset.z)})});
 $('#pAsk').addEventListener('click',function(){
   var L=(sel||$('.lot.hi',svg)||{})._d; if(!L)return;
-  var s=$('#c-tipo'); s.value=ZSEL[L.zone]; $('#c-assunto').value='Plantas'; $('#c-msg').value='Gostava de receber a planta do lote '+L.id+'.';
+  $('#c-tipo').value=ZSEL[L.zone]; $('#c-assunto').value='Plantas'; $('#c-msg').value='Gostava de receber a planta do lote '+L.id+'.';
   go('contacto');
 });
-$$('[data-zone]').forEach(function(b){b.addEventListener('click',function(){setZone(b.dataset.zone);go('planta')})});
+$$('[data-zone]').forEach(function(b){b.addEventListener('click',function(){go('planta',function(){setZone(b.dataset.zone)})})});
+
+/* dives: the camera falls into a numbered point and the place opens as a photograph */
+var photo=$('#mPhoto'), pimg=$('#mPhotoImg'), dv=$('#mDive');
+function hideDive(){
+  if(dv.hidden)return;
+  if(has){G.to(photo,{opacity:0,duration:.7});G.to(dv,{opacity:0,y:20,filter:'blur(8px)',duration:.45,onComplete:function(){dv.hidden=true}})}else{photo.style.opacity=0;dv.hidden=true}
+}
+function dive(D){
+  mode='dive'; sel=null; hi(null); tip.classList.remove('on'); copyOut(true);
+  $('#dNum').textContent=D.n+' · Souto d\'Ave'; $('#dTitle').textContent=D.t; $('#dText').textContent=D.d;
+  if(D.img){pimg.src=D.img;pimg.alt=D.t}
+  var target=around(D.x,D.y,D.img?26:120,0), dur=D.img?2.2:1.6;
+  fly(target,dur);
+  if(has){
+    if(D.img)G.fromTo(photo,{opacity:0},{opacity:1,duration:.9,delay:dur*.62,ease:'power1.out'});
+    G.fromTo(pimg,{scale:1.18,filter:'blur(14px)'},{scale:1,filter:'blur(0px)',duration:1.8,delay:dur*.62,ease:'power3.out'});
+    dv.hidden=false;
+    G.fromTo(dv,{opacity:0,y:30,filter:'blur(14px)'},{opacity:1,y:0,filter:'blur(0px)',duration:1.1,delay:dur*.7,ease:'power3.out'});
+  }else{photo.style.opacity=D.img?1:0;dv.hidden=false}
+}
+$('#dBack').addEventListener('click',backToPlan);
+addEventListener('keydown',function(e){if(e.key==='Escape'&&mode!=='plan')backToPlan()});
+
+/* aerial view toggle */
+var aer=$('#mAerial'), aerOn=false;
+$('#mView').addEventListener('click',function(){
+  aerOn=!aerOn; if(mode!=='plan')backToPlan();
+  if(has)G.to(aer,{opacity:aerOn?1:0,duration:1.1,ease:'power2.inOut'});else aer.style.opacity=aerOn?1:0;
+  if(has)G.fromTo($('img',aer),{scale:aerOn?1.12:1},{scale:1,duration:2.2,ease:'power3.out'});
+  $$('#mView .sw>span').forEach(function(s){s.textContent=aerOn?'Ver a planta':'Ver de cima'});
+});
 
 /* ---------------- navigation ---------------- */
-function go(id){
+function go(id,cb){
   var t=document.getElementById(id); if(!t)return;
-  if(smoother)smoother.scrollTo(t,true,'top top'); else t.scrollIntoView({behavior:reduce?'auto':'smooth'});
+  if(window.__glideTo){window.__glideTo(t,cb);return}
+  t.scrollIntoView({behavior:reduce?'auto':'smooth'}); if(cb)setTimeout(cb,700);
 }
 $$('[data-go]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();go(a.dataset.go)})});
 
@@ -762,15 +909,75 @@ if(desk){
 /* finishes autoplay while in view */
 ST.create({trigger:'#materiais',start:'top 60%',end:'bottom 40%',onToggle:function(s){clearInterval(auto);if(s.isActive)auto=setInterval(cycle,4200)}});
 
-/* plan: camera settles, lots drop in */
-G.fromTo('#mapCam',{scale:1.35,rotate:-7,yPercent:6},{scale:1,rotate:0,yPercent:0,ease:'sine.inOut',scrollTrigger:{trigger:'#mapStage',start:'top bottom',end:'center 55%',scrub:1.5}});
+/* plan: on arrival the camera settles from close and slightly turned; lots drop in once */
+var mapIn=false;
+function mapArrive(){
+  if(mode!=='plan')return;
+  base=baseVB(); setVB(around(base[0]+base[2]/2,base[1]+base[3]/2,base[2]*.5,0)); fly(base.slice(),2.4);
+  if(!mapIn){mapIn=true;G.fromTo('#map .lot',{opacity:0},{opacity:1,duration:.8,ease:'power2.out',stagger:{each:.03,from:'random'},delay:.5,clearProps:'opacity'});
+    G.fromTo('#map .dot',{opacity:0},{opacity:1,duration:.6,stagger:.12,delay:1.4,clearProps:'opacity'})}
+}
+ST.create({trigger:'#planta',start:'top 60%',end:'bottom 40%',onEnter:mapArrive,onEnterBack:mapArrive,onLeave:function(){if(mode!=='plan')backToPlan()},onLeaveBack:function(){if(mode!=='plan')backToPlan()}});
 var mh=lines($('#planta h2'));
-G.fromTo(mh,{x:-60,opacity:0,filter:'blur(10px)'},{x:0,opacity:1,filter:'blur(0px)',stagger:.12,scrollTrigger:{trigger:'#planta',start:'top 80%',end:'top 25%',scrub:1.5}});
-ST.create({trigger:'#mapStage',start:'top 75%',once:true,onEnter:function(){
-  G.fromTo('#map .lot',{opacity:0,y:-14},{opacity:1,y:0,duration:.7,ease:'power3.out',stagger:{each:.025,from:'random'},clearProps:'opacity,transform'});
-  G.fromTo('#map .am',{opacity:0},{opacity:1,duration:.6,stagger:.12,delay:.6});
-  G.fromTo(['.chips button','.panel'],{y:20,opacity:0},{y:0,opacity:1,duration:.8,stagger:.05,ease:'power3.out',clearProps:'all'});
-}});
+G.timeline({scrollTrigger:{trigger:'#planta',start:'top 85%',end:'bottom 15%',scrub:2.5}})
+  .fromTo($('#planta .sn-text'),{yPercent:-240,filter:'blur(6px)'},{yPercent:0,filter:'blur(0px)',duration:1.4},0)
+  .fromTo($('#planta .sn-num'),{yPercent:110},{yPercent:0,duration:2.4},.9)
+  .fromTo(mh,{x:-innerWidth*.28,opacity:0},{x:0,opacity:1,duration:4.4,ease:'power3.out',stagger:.25},.1)
+  .fromTo(mh,{filter:'blur(22px)'},{filter:'blur(0px)',duration:4.5,stagger:.25},0)
+  .fromTo($$('#mCopy .lede, #mCopy .chips, #mCopy .eyebrow'),{y:40,opacity:0},{y:0,opacity:1,duration:2.6,stagger:.18},1.8)
+  .to({},{duration:5});
+
+/* section-to-section scrolling (desktop): every wheel flick or key glides one chapter */
+if(smoother){
+  var stopsArr=[], gliding=false, lastW=0, idleT=null, glideTw=null;
+  var stopsOf=function(){
+    var arr=[], max=ST.maxScroll(window), cur=smoother.scrollTop();
+    $$('.hero, .chapter, .foot').forEach(function(ch){
+      if(ch.id==='interiores'&&hsTween&&hsTween.scrollTrigger){
+        var st=hsTween.scrollTrigger, n=$$('.hs-card').length-1, i;
+        arr.push(st.start); for(i=1;i<=n;i++)arr.push(st.start+(st.end-st.start)*i/n); return;
+      }
+      arr.push(Math.min(max,ch.getBoundingClientRect().top+cur));
+    });
+    arr.sort(function(a,b){return a-b});
+    return arr.filter(function(v,i){return i===0||v-arr[i-1]>4});
+  };
+  ST.addEventListener('refresh',function(){stopsArr=stopsOf()});
+  stopsArr=stopsOf();
+  var glide=function(y,cb){
+    gliding=true; if(glideTw)glideTw.kill();
+    var d=Math.abs(y-smoother.scrollTop()), dur=Math.min(2.1,Math.max(1.05,.9+d/innerHeight*.35));
+    glideTw=G.to(smoother,{scrollTop:y,duration:dur,ease:'power3.inOut',onComplete:function(){gliding=false;glideTw=null;if(cb)cb()}});
+  };
+  var step=function(dir){
+    var cur=smoother.scrollTop(), y=null, i;
+    if(dir>0){for(i=0;i<stopsArr.length;i++)if(stopsArr[i]>cur+6){y=stopsArr[i];break}}
+    else{for(i=stopsArr.length-1;i>=0;i--)if(stopsArr[i]<cur-6){y=stopsArr[i];break}}
+    if(y!==null)glide(y);
+  };
+  window.__glideTo=function(t,cb){
+    var cur=smoother.scrollTop(), y=Math.min(ST.maxScroll(window),t.getBoundingClientRect().top+cur);
+    var best=stopsArr.reduce(function(p,v){return Math.abs(v-y)<Math.abs(p-y)?v:p},stopsArr[0]);
+    glide(best,cb);
+  };
+  addEventListener('wheel',function(e){
+    if(e.ctrlKey)return; e.preventDefault();
+    var now=performance.now(), gap=now-lastW; lastW=now;
+    if(gliding||gap<200||Math.abs(e.deltaY)<3)return;
+    step(e.deltaY>0?1:-1);
+  },{passive:false});
+  addEventListener('keydown',function(e){
+    var tg=e.target.tagName; if(/INPUT|TEXTAREA|SELECT/.test(tg))return;
+    var k=e.key, d=(k==='ArrowDown'||k==='PageDown'||(k===' '&&!e.shiftKey))?1:(k==='ArrowUp'||k==='PageUp'||(k===' '&&e.shiftKey))?-1:0;
+    if(k==='Home'){e.preventDefault();glide(stopsArr[0]);return} if(k==='End'){e.preventDefault();glide(stopsArr[stopsArr.length-1]);return}
+    if(d){e.preventDefault();if(!gliding)step(d)}
+  });
+  /* scrollbar drags settle on the nearest chapter once released */
+  addEventListener('scroll',function(){
+    if(gliding)return; clearTimeout(idleT);
+    idleT=setTimeout(function(){if(gliding)return;var cur=smoother.scrollTop();var best=stopsArr.reduce(function(p,v){return Math.abs(v-cur)<Math.abs(p-cur)?v:p},stopsArr[0]);if(Math.abs(best-cur)>8)glide(best)},260);
+  },{passive:true});
+}
 
 /* footer wordmark */
 G.fromTo('.foot .big span, .foot .big em',{yPercent:60,opacity:0},{yPercent:0,opacity:1,stagger:.1,ease:'power3.out',scrollTrigger:{trigger:'.foot',start:'top 85%',end:'top 35%',scrub:1.2}});

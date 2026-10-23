@@ -929,7 +929,7 @@ G.timeline({scrollTrigger:{trigger:'#planta',start:'top 85%',end:'bottom 15%',sc
 
 /* section-to-section scrolling (desktop): every wheel flick or key glides one chapter */
 if(smoother){
-  var stopsArr=[], gliding=false, lastW=0, idleT=null, glideTw=null;
+  var stopsArr=[], gliding=false, lastW=0, armed=true, idleT=null, glideTw=null;
   var stopsOf=function(){
     var arr=[], max=ST.maxScroll(window), cur=smoother.scrollTop();
     $$('.hero, .chapter, .foot').forEach(function(ch){
@@ -962,9 +962,11 @@ if(smoother){
   };
   addEventListener('wheel',function(e){
     if(e.ctrlKey)return; e.preventDefault();
-    var now=performance.now(), gap=now-lastW; lastW=now;
-    if(gliding||gap<200||Math.abs(e.deltaY)<3)return;
-    step(e.deltaY>0?1:-1);
+    /* one step per gesture: a pause of 180 ms re-arms; tiny first deltas of a trackpad swipe do not consume the gesture */
+    var now=performance.now(); if(now-lastW>180)armed=true; lastW=now;
+    var dy=e.deltaMode===1?e.deltaY*16:e.deltaY;
+    if(gliding||!armed||Math.abs(dy)<4)return;
+    armed=false; step(dy>0?1:-1);
   },{passive:false});
   addEventListener('keydown',function(e){
     var tg=e.target.tagName; if(/INPUT|TEXTAREA|SELECT/.test(tg))return;

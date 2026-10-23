@@ -271,6 +271,23 @@ p{margin:0}
 .legal{font-size:12px;color:var(--mist);max-width:72ch;margin-top:26px}
 
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important}.pl{display:none}}
+
+/* ---- v03: cinematic grade, overlays and contrast ---- */
+.bg img,.hero-bg img,.fin-bg img{filter:contrast(1.08) saturate(.82) brightness(.9)}
+.scan{position:absolute;inset:0;z-index:2;pointer-events:none;mix-blend-mode:soft-light;opacity:.28;
+  background:repeating-linear-gradient(0deg,rgba(0,0,0,.6) 0 1px,transparent 1px 3px)}
+.vig{position:absolute;inset:0;z-index:2;pointer-events:none;background:radial-gradient(120% 90% at 50% 40%,transparent 55%,rgba(8,10,9,.55) 100%)}
+.dim{position:absolute;inset:0;z-index:2;pointer-events:none;background:#0A0D0B;opacity:0}
+.cine .shade,.fin .shade{background:linear-gradient(0deg,rgba(12,15,13,.88) 0%,rgba(12,15,13,.42) 38%,rgba(12,15,13,0) 66%),linear-gradient(90deg,rgba(12,15,13,.62) 0%,rgba(12,15,13,0) 55%)}
+.cine.right .shade{background:linear-gradient(0deg,rgba(12,15,13,.88) 0%,rgba(12,15,13,.42) 38%,rgba(12,15,13,0) 66%),linear-gradient(270deg,rgba(12,15,13,.62) 0%,rgba(12,15,13,0) 55%)}
+.cine h2,.fin h2,.hero-h,.formch h2,.contact h2,.sn-num{color:#fff;text-shadow:0 .022em 0 rgba(10,12,10,.45)}
+.cine h2 em,.fin h2 em,.formch h2 em,.contact h2 em{color:#D9B385}
+.cine .lede,.fin .lede{color:rgba(255,255,255,.9);font-weight:400}
+.cine h2{font-size:clamp(50px,7vw,116px);line-height:.88}
+.figs{border-top:1px solid rgba(255,255,255,.3);padding-top:22px;margin-top:8px}
+.sn{border-bottom:1px solid rgba(255,255,255,.22);padding-bottom:14px;width:calc(100% - 8vw);margin-left:max(16px,calc(env(safe-area-inset-left,0px) + 4vw));padding-left:0!important;padding-right:0!important}
+.sn.static{width:auto;margin-left:0}
+.hs-card .ph img{filter:contrast(1.05) saturate(.9)}
 </style>
 </head>
 <body>
@@ -307,7 +324,7 @@ p{margin:0}
 </section>
 
 <section class="chapter formch" id="brochura">
-  <div class="bg"><img src="img/vale-1800.webp" srcset="img/vale-900.webp 900w, img/vale-1800.webp 1800w" sizes="100vw" alt="" loading="lazy"></div>
+  <div class="bg"><img src="img/sala_entrada-1800.webp" srcset="img/sala_entrada-900.webp 900w, img/sala_entrada-1800.webp 1800w" sizes="100vw" alt="Sala aberta para a piscina ao fim da tarde" loading="lazy"></div>
   <div class="shade"></div>
   <div class="formch-in wrap">
     <div class="copy">
@@ -349,7 +366,7 @@ p{margin:0}
 
 <div id="colecoes"></div>
 <section class="chapter cine" id="alto">
-  <div class="bg"><img src="img/casa-1800.webp" srcset="img/casa-900.webp 900w, img/casa-1800.webp 1800w" sizes="100vw" alt="Moradia térrea com pátio e piscina" loading="lazy"></div>
+  <div class="bg"><img src="img/i01_sala-1800.webp" srcset="img/i01_sala-900.webp 900w, img/i01_sala-1800.webp 1800w" sizes="100vw" alt="Sala com lareira de granito aberta para o vale" loading="lazy"></div>
   <div class="shade"></div>
   <div class="sn wrap"><span class="sn-mask"><span class="sn-num">02</span></span><span class="sn-text mono">Nascente Alto</span></div>
   <div class="copy wrap">
@@ -362,7 +379,7 @@ p{margin:0}
 </section>
 
 <section class="chapter cine right" id="nascente">
-  <div class="bg"><img src="img/rua-1800.webp" srcset="img/rua-900.webp 900w, img/rua-1800.webp 1800w" sizes="100vw" alt="Rua do nascente entre muros de granito" loading="lazy"></div>
+  <div class="bg"><img src="img/casa-1800.webp" srcset="img/casa-900.webp 900w, img/casa-1800.webp 1800w" sizes="100vw" alt="Moradia térrea com pátio e piscina" loading="lazy"></div>
   <div class="shade"></div>
   <div class="sn wrap"><span class="sn-mask"><span class="sn-num">03</span></span><span class="sn-text mono">Nascente</span></div>
   <div class="copy wrap">
@@ -375,7 +392,7 @@ p{margin:0}
 </section>
 
 <section class="chapter cine" id="poente">
-  <div class="bg"><img src="img/aerea-1800.webp" srcset="img/aerea-900.webp 900w, img/aerea-1800.webp 1800w" sizes="100vw" alt="Vista aérea do empreendimento" loading="lazy"></div>
+  <div class="bg"><img src="img/int_jantar-1800.webp" srcset="img/int_jantar-900.webp 900w, img/int_jantar-1800.webp 1800w" sizes="100vw" alt="Sala de jantar aberta para a paisagem ao fim da tarde" loading="lazy"></div>
   <div class="shade"></div>
   <div class="sn wrap"><span class="sn-mask"><span class="sn-num">04</span></span><span class="sn-text mono">Poente</span></div>
   <div class="copy wrap">
@@ -408,7 +425,7 @@ p{margin:0}
     </div>
     <div class="hs-track" id="track">
       <figure class="hs-card w"><div class="ph"><img src="img/i01_sala-1800.webp" alt="Sala com lareira de granito aberta para o pátio e para o vale" loading="lazy"></div><figcaption><span>Sala com lareira de granito, aberta ao pátio e ao vale</span><span class="mono">01</span></figcaption></figure>
-      <figure class="hs-card t"><div class="ph"><img src="img/int_suite-1800.webp" alt="Suite principal com vista para o bosque" loading="lazy"></div><figcaption><span>Suite principal sobre o bosque</span><span class="mono">02</span></figcaption></figure>
+      <figure class="hs-card t"><div class="ph"><img src="img/i03_suite-1800.webp" alt="Suite principal com vista para o vale com névoa ao amanhecer" loading="lazy"></div><figcaption><span>Suite principal, o vale ao amanhecer</span><span class="mono">02</span></figcaption></figure>
       <figure class="hs-card w"><div class="ph"><img src="img/i02_cozinha-1800.webp" alt="Sala de jantar e cozinha entre o terraço com piscina e o jardim central" loading="lazy"></div><figcaption><span>Jantar e cozinha entre o vale e o jardim central</span><span class="mono">03</span></figcaption></figure>
       <figure class="hs-card t"><div class="ph"><img src="img/int_banho-1800.webp" alt="Casa de banho com banheira de pedra" loading="lazy"></div><figcaption><span>Banheira de pedra, duche de chão</span><span class="mono">04</span></figcaption></figure>
       <figure class="hs-card w"><div class="ph"><img src="img/int_jantar-1800.webp" alt="Sala de jantar aberta para o lago" loading="lazy"></div><figcaption><span>Jantar com a parede de vidro aberta</span><span class="mono">05</span></figcaption></figure>
@@ -419,7 +436,7 @@ p{margin:0}
 </section>
 
 <section class="chapter fin" id="materiais">
-  <div class="bg fin-bg"><img class="on" data-k="granito" src="img/materiais-1800.webp" alt="Pormenor de granito serrado, carvalho e linho" loading="lazy"><img data-k="carvalho" src="img/i01_sala-1800.webp" alt="" loading="lazy"><img data-k="bronze" src="img/sala_entrada-1800.webp" alt="" loading="lazy"><img data-k="agua" src="img/vista-1800.webp" alt="" loading="lazy"></div>
+  <div class="bg fin-bg"><img class="on" data-k="granito" src="img/materiais-1800.webp" alt="Pormenor de granito serrado, carvalho e linho" loading="lazy"><img data-k="carvalho" src="img/i02_cozinha-1800.webp" alt="" loading="lazy"><img data-k="bronze" src="img/sala_entrada-1800.webp" alt="" loading="lazy"><img data-k="agua" src="img/vista-1800.webp" alt="" loading="lazy"></div>
   <div class="shade"></div>
   <div class="sn wrap"><span class="sn-mask"><span class="sn-num">07</span></span><span class="sn-text mono">Materiais</span></div>
   <div class="copy wrap">
@@ -482,7 +499,7 @@ p{margin:0}
 </section>
 
 <section class="chapter contact" id="contacto">
-  <div class="bg"><img src="img/lagos-1800.webp" srcset="img/lagos-900.webp 900w, img/lagos-1800.webp 1800w" sizes="100vw" alt="" loading="lazy"></div>
+  <div class="bg"><img src="img/i03_suite-1800.webp" srcset="img/i03_suite-900.webp 900w, img/i03_suite-1800.webp 1800w" sizes="100vw" alt="Suite principal com vista para o vale ao amanhecer" loading="lazy"></div>
   <div class="shade heavy"></div>
   <div class="contact-in wrap">
     <div class="copy">
@@ -643,6 +660,7 @@ function plain(){
 }
 if(!has){plain();return}
 
+$$('.hero, .cine, .fin, .formch, .contact').forEach(function(ch){['scan','vig','dim'].forEach(function(k){var d=document.createElement('div');d.className=k;d.setAttribute('aria-hidden','true');var sh=ch.querySelector('.shade');sh?sh.after(d):ch.appendChild(d)})});
 /* ================= GSAP ================= */
 G.registerPlugin(ST); if(SPLIT)G.registerPlugin(SPLIT); if(SMOOTH)G.registerPlugin(SMOOTH);
 var desk=matchMedia('(min-width:861px) and (hover:hover)').matches;
@@ -690,20 +708,28 @@ $$('.chapter .bg').forEach(function(bg){
   G.fromTo(im,{scale:1.22,yPercent:-5},{scale:1.02,yPercent:5,ease:'none',scrollTrigger:{trigger:bg.parentNode,start:'top bottom',end:'bottom top',scrub:true}});
 });
 
-/* chapter copy: scrubbed in, held, mirrored out */
-$$('.cine, .fin').forEach(function(ch){
-  var right=ch.classList.contains('right'), dir=right?80:-80;
-  var h=$('h2',ch), ls=lines(h), rest=$$('.copy>.lede, .copy>.figs, .copy>.pill, .copy>.tags, .copy .place-rest, .dist li, .place .lede',ch);
-  var tl=G.timeline({scrollTrigger:{trigger:ch,start:'top 78%',end:'bottom 22%',scrub:2}});
-  tl.fromTo($('.sn-num',ch),{yPercent:110},{yPercent:0,duration:.8,ease:'power3.out'},0)
-    .fromTo($('.sn-text',ch),{opacity:0,x:-20},{opacity:1,x:0,duration:.8},.1)
-    .fromTo(ls,{x:dir,opacity:0,filter:'blur(12px)'},{x:0,opacity:1,filter:'blur(0px)',duration:1,ease:'power3.out',stagger:.14},.15)
-    .fromTo(rest,{y:30,opacity:0,filter:'blur(6px)'},{y:0,opacity:1,filter:'blur(0px)',duration:.9,ease:'power3.out',stagger:.08},.5)
-    .to({},{duration:2.6})
-    .to(ls,{x:-dir*.5,opacity:0,filter:'blur(10px)',duration:.9,ease:'power2.in',stagger:.06})
-    .to(rest,{y:-24,opacity:0,duration:.8,ease:'power2.in',stagger:.04},'<')
-    .to($('.sn-num',ch),{yPercent:-110,duration:.6},'<');
+/* chapter copy: lines from alternating sides with a long blur; mirrored out */
+$$('.cine, .fin').forEach(function(ch,i){
+  var dir=(i%2?1:-1)*Math.max(innerWidth,1)*.28;
+  var h=$('h2',ch), ls=lines(h), rest=$$('.copy>.lede, .copy>.figs, .copy>.pill, .copy>.tags, .dist li, .place .lede',ch);
+  var tl=G.timeline({scrollTrigger:{trigger:ch,start:'top 85%',end:'bottom 15%',scrub:2.5}});
+  tl.fromTo($('.sn-text',ch),{yPercent:-240,filter:'blur(6px)'},{yPercent:0,filter:'blur(0px)',duration:1.4,ease:'power3.out'},0)
+    .fromTo($('.sn-num',ch),{yPercent:110,filter:'blur(6px)'},{yPercent:0,filter:'blur(0px)',duration:2.4,ease:'power3.out'},.9)
+    .fromTo(ls,{x:dir,opacity:0},{x:0,opacity:1,duration:4.4,ease:'power3.out',stagger:.25},.1)
+    .fromTo(ls,{filter:'blur(22px)'},{filter:'blur(0px)',duration:4.5,ease:'power1.out',stagger:.25},0)
+    .fromTo(rest,{y:40,opacity:0,filter:'blur(8px)'},{y:0,opacity:1,filter:'blur(0px)',duration:2.6,ease:'power3.out',stagger:.18},1.8)
+    .to({},{duration:5})
+    .to(ls,{x:-dir*.6,opacity:0,filter:'blur(18px)',duration:3,ease:'power2.in',stagger:.15})
+    .to(rest,{y:-30,opacity:0,filter:'blur(6px)',duration:2.4,ease:'power2.in',stagger:.08},'<')
+    .to($$('.sn-num, .sn-text',ch),{yPercent:-120,opacity:0,duration:2},'<');
 });
+/* cinematic transitions: the next frame opens like a curtain, the previous one sinks into shadow */
+$$('.cine, .fin, .formch, .contact').forEach(function(ch){
+  var bg=$('.bg',ch), dim=$('.dim',ch);
+  if(bg)G.fromTo(bg,{clipPath:'inset(14% 7% 0% 7%)'},{clipPath:'inset(0% 0% 0% 0%)',ease:'power2.out',scrollTrigger:{trigger:ch,start:'top bottom',end:'top 15%',scrub:1.2}});
+  if(dim)G.fromTo(dim,{opacity:0},{opacity:.7,ease:'power1.in',scrollTrigger:{trigger:ch,start:'bottom 70%',end:'bottom top',scrub:true}});
+});
+G.fromTo('.hero .dim',{opacity:0},{opacity:.7,ease:'power1.in',scrollTrigger:{trigger:'.hero',start:'bottom 70%',end:'bottom top',scrub:true}});
 
 /* brochure + contact: heading lines and the card */
 $$('.formch, .contact').forEach(function(ch){

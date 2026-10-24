@@ -326,7 +326,12 @@ p{margin:0}
   .panel{position:fixed;top:auto;bottom:12px;left:12px;right:12px;width:auto;transform:none;z-index:70}
   .m-view{position:relative;right:auto;bottom:auto;align-self:flex-start;margin:18px 16px 0}
 }
-@media (max-width:860px){html{scroll-snap-type:y proximity}.hero,.cine,.fin,.formch,.contact{scroll-snap-align:start}}
+@media (max-width:860px),(hover:none){html{scroll-snap-type:y mandatory;scroll-behavior:smooth}.hero,.chapter,.foot{scroll-snap-align:start;scroll-snap-stop:always}.hs{scroll-snap-stop:normal}}
+.cforms{display:grid;gap:16px;min-width:0}
+.mtabs{display:flex;gap:8px}
+.mtabs button{border:1px solid var(--line);background:rgba(15,20,17,.45);border-radius:999px;padding:11px 18px;font-family:var(--f-mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;cursor:pointer;transition:all .35s}
+.mtabs button.on{background:var(--linen);color:var(--night);border-color:var(--linen)}
+.cmode{display:none}.cmode.on{display:grid}
 </style>
 </head>
 <body>
@@ -338,11 +343,11 @@ p{margin:0}
 <header class="hdr" id="hdr">
   <a class="brand" href="#top" data-go="top">Souto <em>d'Ave</em></a>
   <nav class="nav" aria-label="Capítulos">
-    <a href="#vale" data-go="vale">O vale</a><a href="#planta" data-go="planta">Planta</a><a href="#colecoes" data-go="colecoes">Moradias</a><a href="#interiores" data-go="interiores">Interiores</a><a href="#materiais" data-go="materiais">Materiais</a><a href="#lugar" data-go="lugar">O lugar</a>
+    <a href="#planta" data-go="planta">Planta</a><a href="#vale" data-go="vale">O vale</a><a href="#colecoes" data-go="colecoes">Moradias</a><a href="#interiores" data-go="interiores">Interiores</a><a href="#materiais" data-go="materiais">Materiais</a><a href="#lugar" data-go="lugar">O lugar</a>
   </nav>
   <div class="hcta">
-    <a class="pill ghost" href="#brochura" data-go="brochura"><span class="sw"><span>Brochura</span><span aria-hidden="true">Brochura</span></span></a>
-    <a class="pill solid" href="#contacto" data-go="contacto"><span class="sw"><span>Marcar visita</span><span aria-hidden="true">Marcar visita</span></span></a>
+    <a class="pill ghost" href="#contacto" data-go="contacto" data-mode="brochura"><span class="sw"><span>Brochura</span><span aria-hidden="true">Brochura</span></span></a>
+    <a class="pill solid" href="#contacto" data-go="contacto" data-mode="visita"><span class="sw"><span>Marcar visita</span><span aria-hidden="true">Marcar visita</span></span></a>
   </div>
 </header>
 
@@ -362,46 +367,7 @@ p{margin:0}
   </div>
 </section>
 
-<section class="chapter formch" id="brochura">
-  <div class="bg"><img src="img/sala_entrada-1800.webp" srcset="img/sala_entrada-900.webp 900w, img/sala_entrada-1800.webp 1800w" sizes="100vw" alt="Sala aberta para a piscina ao fim da tarde" loading="lazy"></div>
-  <div class="shade"></div>
-  <div class="formch-in wrap">
-    <div class="copy">
-      <span class="eyebrow">A brochura</span>
-      <h2><span class="sp">A brochura do Souto d'Ave.</span> <em class="sp">Plantas, áreas e preços.</em></h2>
-      <p class="lede">Recebe por email a brochura completa: a planta de cada coleção, os acabamentos e a tabela de preços da primeira fase.</p>
-    </div>
-    <form class="card" id="fb" novalidate>
-      <div class="fields">
-        <span class="eyebrow">Pedir brochura</span>
-        <div class="fld"><label for="b-nome">Nome</label><input id="b-nome" name="nome" autocomplete="name" required></div>
-        <div class="fld"><label for="b-email">Email</label><input id="b-email" name="email" type="email" autocomplete="email" required></div>
-        <div class="fld"><label for="b-tel">Telefone</label><input id="b-tel" name="tel" type="tel" autocomplete="tel"></div>
-        <p class="err" id="fb-err" aria-live="polite"></p>
-        <button class="pill solid wide" type="submit"><span class="sw"><span>Enviar-me a brochura</span><span aria-hidden="true">Enviar-me a brochura</span></span></button>
-        <p class="fine">Os seus dados ficam apenas com a equipa comercial do Souto d'Ave.</p>
-      </div>
-      <div class="ok" aria-live="polite"><span class="eyebrow">Pedido recebido</span><p>Obrigado. A brochura segue para o seu email nas próximas horas.</p></div>
-    </form>
-  </div>
-</section>
 
-<section class="chapter cine" id="vale">
-  <div class="bg"><img src="img/aerea_noite-1800.webp" srcset="img/aerea_noite-900.webp 900w, img/aerea_noite-1800.webp 1800w" sizes="100vw" alt="Vista aérea do empreendimento ao crepúsculo" loading="lazy"></div>
-  <div class="shade"></div>
-  <div class="sn wrap"><span class="sn-mask"><span class="sn-num">01</span></span><span class="sn-text mono">O vale</span></div>
-  <div class="copy wrap">
-    <h2><span class="sp">Seis hectares de carvalhos.</span> <em class="sp">Uma só entrada.</em></h2>
-    <p class="lede">Uma encosta virada a sul e poente sobre o vale do Ave. Um ribeiro desce pelo meio, passa por dois lagos e por uma barragem antiga em granito. As casas ficam nas cotas altas, com vista. O fundo do vale fica para todos.</p>
-    <dl class="figs">
-      <div><dt>de vale privado</dt><dd><b data-count="6.4" data-dec="1">6,4</b><small>ha</small></dd></div>
-      <div><dt>moradias isoladas</dt><dd><b data-count="25">25</b></dd></div>
-      <div><dt>casas do lago</dt><dd><b data-count="12">12</b></dd></div>
-      <div><dt>do lago ao topo</dt><dd><b data-count="40">40</b><small>m</small></dd></div>
-    </dl>
-  </div>
-  <span class="artist mono">Imagem ilustrativa</span>
-</section>
 
 <section class="chapter mapch" id="planta">
   <div class="mapfull" id="mapStage">
@@ -411,7 +377,7 @@ p{margin:0}
     <div class="tip" id="tip"></div>
   </div>
   <div class="m-shade" aria-hidden="true"></div>
-  <div class="sn wrap"><span class="sn-mask"><span class="sn-num">02</span></span><span class="sn-text mono">A planta</span></div>
+  <div class="sn wrap"><span class="sn-mask"><span class="sn-num">01</span></span><span class="sn-text mono">A planta</span></div>
   <div class="m-copy wrap" id="mCopy">
     <span class="eyebrow">Masterplan</span>
     <h2><span class="sp">Escolha a sua encosta.</span> <em class="sp">Cada lote, a sua vista.</em></h2>
@@ -440,6 +406,25 @@ p{margin:0}
   </aside>
   <button class="pill ghost light m-view" type="button" id="mView"><span class="sw"><span>Ver de cima</span><span aria-hidden="true">Ver de cima</span></span></button>
 </section>
+
+<section class="chapter cine" id="vale">
+  <div class="bg"><img src="img/aerea_noite-1800.webp" srcset="img/aerea_noite-900.webp 900w, img/aerea_noite-1800.webp 1800w" sizes="100vw" alt="Vista aérea do empreendimento ao crepúsculo" loading="lazy"></div>
+  <div class="shade"></div>
+  <div class="sn wrap"><span class="sn-mask"><span class="sn-num">02</span></span><span class="sn-text mono">O vale</span></div>
+  <div class="copy wrap">
+    <h2><span class="sp">Seis hectares de carvalhos.</span> <em class="sp">Uma só entrada.</em></h2>
+    <p class="lede">Uma encosta virada a sul e poente sobre o vale do Ave. Um ribeiro desce pelo meio, passa por dois lagos e por uma barragem antiga em granito. As casas ficam nas cotas altas, com vista. O fundo do vale fica para todos.</p>
+    <dl class="figs">
+      <div><dt>de vale privado</dt><dd><b data-count="6.4" data-dec="1">6,4</b><small>ha</small></dd></div>
+      <div><dt>moradias isoladas</dt><dd><b data-count="25">25</b></dd></div>
+      <div><dt>casas do lago</dt><dd><b data-count="12">12</b></dd></div>
+      <div><dt>do lago ao topo</dt><dd><b data-count="40">40</b><small>m</small></dd></div>
+    </dl>
+  </div>
+  <span class="artist mono">Imagem ilustrativa</span>
+</section>
+
+
 
 <div id="colecoes"></div>
 <section class="chapter cine" id="alto">
@@ -556,10 +541,11 @@ p{margin:0}
   <div class="contact-in wrap">
     <div class="copy">
       <div class="sn static"><span class="sn-mask"><span class="sn-num">10</span></span><span class="sn-text mono">Contacto</span></div>
-      <h2><span class="sp">Registe o seu interesse.</span> <em class="sp">Mostramos-lhe o vale.</em></h2>
-      <p class="lede">As visitas ao terreno são por marcação. A primeira fase tem sete moradias, no nascente, junto à entrada.</p>
+      <h2><span class="sp">Uma visita ou a brochura.</span> <em class="sp">Mostramos-lhe o vale.</em></h2>
+      <p class="lede">As visitas ao terreno são por marcação. Se preferir começar pela brochura, enviamos-lhe as plantas, as áreas e os preços da primeira fase.</p>
     </div>
-    <form class="card" id="fc" novalidate>
+    <div class="cforms"><div class="mtabs" role="tablist" aria-label="Tipo de pedido"><button type="button" role="tab" class="on" data-m="visita" aria-selected="true">Marcar visita</button><button type="button" role="tab" data-m="brochura" aria-selected="false">Pedir brochura</button></div>
+    <form class="card cmode on" id="fc" data-mode="visita" novalidate>
       <div class="fields">
         <div class="cf-prog" aria-hidden="true"><span class="on">Quem é</span><span>Contacto</span><span>Pedido</span></div>
         <div class="cf-step on">
@@ -581,6 +567,19 @@ p{margin:0}
       </div>
       <div class="ok" aria-live="polite"><span class="eyebrow">Pedido recebido</span><p>Obrigado. A equipa do Souto d'Ave entra em contacto consigo nos próximos dias.</p></div>
     </form>
+    <form class="card cmode" id="fb" data-mode="brochura" novalidate>
+      <div class="fields">
+        <p class="fine" style="margin:0">Recebe por email a planta de cada coleção, os acabamentos e a tabela de preços da primeira fase.</p>
+        <div class="fld"><label for="b-nome">Nome</label><input id="b-nome" name="nome" autocomplete="name" required></div>
+        <div class="fld"><label for="b-email">Email</label><input id="b-email" name="email" type="email" autocomplete="email" required></div>
+        <div class="fld"><label for="b-tel">Telefone</label><input id="b-tel" name="tel" type="tel" autocomplete="tel"></div>
+        <p class="err" id="fb-err" aria-live="polite"></p>
+        <button class="pill solid wide" type="submit"><span class="sw"><span>Enviar-me a brochura</span><span aria-hidden="true">Enviar-me a brochura</span></span></button>
+        <p class="fine">Os seus dados ficam apenas com a equipa comercial do Souto d'Ave.</p>
+      </div>
+      <div class="ok" aria-live="polite"><span class="eyebrow">Pedido recebido</span><p>Obrigado. A brochura segue para o seu email nas próximas horas.</p></div>
+    </form>
+    </div>
   </div>
 </section>
 
@@ -588,7 +587,7 @@ p{margin:0}
   <div class="wrap">
     <p class="big"><span>Souto</span> <em>d'Ave</em></p>
     <div class="row">
-      <nav aria-label="Rodapé"><a href="#vale" data-go="vale">O vale</a><a href="#planta" data-go="planta">Planta</a><a href="#colecoes" data-go="colecoes">Moradias</a><a href="#interiores" data-go="interiores">Interiores</a><a href="#materiais" data-go="materiais">Materiais</a><a href="#lugar" data-go="lugar">O lugar</a><a href="#contacto" data-go="contacto">Contacto</a></nav>
+      <nav aria-label="Rodapé"><a href="#planta" data-go="planta">Planta</a><a href="#vale" data-go="vale">O vale</a><a href="#colecoes" data-go="colecoes">Moradias</a><a href="#interiores" data-go="interiores">Interiores</a><a href="#materiais" data-go="materiais">Materiais</a><a href="#lugar" data-go="lugar">O lugar</a><a href="#contacto" data-go="contacto">Contacto</a></nav>
       <span class="mono">Taíde · Póvoa de Lanhoso · Portugal</span>
     </div>
     <p class="legal">Projeto em fase de licenciamento. Imagens, plantas, áreas e preços são ilustrativos e indicativos, podem ser alterados sem aviso e não constituem proposta contratual. © 2026 Souto d'Ave.</p>
@@ -771,7 +770,9 @@ function go(id,cb){
   if(window.__glideTo){window.__glideTo(t,cb);return}
   t.scrollIntoView({behavior:reduce?'auto':'smooth'}); if(cb)setTimeout(cb,700);
 }
-$$('[data-go]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();go(a.dataset.go)})});
+function setMode(m){$$('.mtabs button').forEach(function(b){var on=b.dataset.m===m;b.classList.toggle('on',on);b.setAttribute('aria-selected',on)});$$('.cmode').forEach(function(f){var on=f.dataset.mode===m;f.classList.toggle('on',on);if(on&&has)G.fromTo(f,{opacity:0,y:20,filter:'blur(8px)'},{opacity:1,y:0,filter:'blur(0px)',duration:.7,ease:'power3.out'})})}
+$$('.mtabs button').forEach(function(b){b.addEventListener('click',function(){setMode(b.dataset.m)})});
+$$('[data-go]').forEach(function(a){a.addEventListener('click',function(e){e.preventDefault();if(a.dataset.mode)setMode(a.dataset.mode);go(a.dataset.go)})});
 
 /* ---------------- forms ---------------- */
 var em=function(v){return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v)};
@@ -821,7 +822,7 @@ function lines(h){
 }
 
 /* preloader */
-var pl=$('#pl'),pct=$('#plpct'),first=$$('.hero img, #brochura img'),loaded=0,cnt={v:0};
+var pl=$('#pl'),pct=$('#plpct'),first=$$('.hero img'),loaded=0,cnt={v:0};
 var ready=new Promise(function(res){var n=first.length;if(!n)res();first.forEach(function(i){if(i.complete)done();else{i.addEventListener('load',done);i.addEventListener('error',done)}});function done(){loaded++;if(loaded>=n)res()}});
 var count=G.to(cnt,{v:90,duration:2.2,ease:'power1.out',onUpdate:function(){pct.textContent=Math.round(cnt.v)}});
 var hLines=$$('.hero-h .ln>span');
@@ -884,7 +885,7 @@ $$('.formch, .contact').forEach(function(ch){
   var tl=G.timeline({scrollTrigger:{trigger:ch,start:'top 75%',end:'top 15%',scrub:1.5}});
   tl.fromTo(ls,{x:-70,opacity:0,filter:'blur(12px)'},{x:0,opacity:1,filter:'blur(0px)',stagger:.12,ease:'power3.out'},0)
     .fromTo($$('.copy .lede, .copy .eyebrow, .sn-num',ch),{y:24,opacity:0},{y:0,opacity:1,stagger:.08},.1)
-    .fromTo($('.card',ch),{y:90,rotate:2.5,opacity:0,filter:'blur(10px)'},{y:0,rotate:0,opacity:1,filter:'blur(0px)',ease:'power3.out'},.15);
+    .fromTo($('.cforms',ch)||$('.card',ch),{y:90,rotate:2.5,opacity:0,filter:'blur(10px)'},{y:0,rotate:0,opacity:1,filter:'blur(0px)',ease:'power3.out'},.15);
 });
 
 /* figures count up */
